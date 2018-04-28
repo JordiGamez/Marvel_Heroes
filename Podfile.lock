@@ -3,12 +3,14 @@ PODS:
   - Alamofire-Synchronous (4.0.0):
     - Alamofire (~> 4.0)
   - CryptoSwift (0.9.0)
+  - Kingfisher (4.7.0)
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - Alamofire-Synchronous
   - CryptoSwift
+  - Kingfisher (~> 4.0)
   - SwiftyJSON
 
 SPEC REPOS:
@@ -16,14 +18,16 @@ SPEC REPOS:
     - Alamofire
     - Alamofire-Synchronous
     - CryptoSwift
+    - Kingfisher
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Alamofire-Synchronous: eedf1e6e961c3795a63c74990b3f7d9fbfac7e50
   CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: cfbd0b6f4d0933703685f14db4da489b9283533e
+PODFILE CHECKSUM: 13c54775a982ed0d7dc378329776b47a580d7c1e
 
 COCOAPODS: 1.5.0

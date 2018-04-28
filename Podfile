@@ -10,6 +10,7 @@ target 'Marvel Heroes' do
   pod 'Alamofire-Synchronous'
   pod 'SwiftyJSON'
   pod 'CryptoSwift'
+  pod 'Kingfisher', '~> 4.0'
   
   target 'Marvel HeroesTests' do
     inherit! :search_paths

@@ -38,6 +38,8 @@
 		C613CC7120948E2300E80820 /* HeroEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC7020948E2300E80820 /* HeroEntity.swift */; };
 		C613CC742094BB2700E80820 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC732094BB2700E80820 /* Hero.swift */; };
 		C613CC762094BB7000E80820 /* HeroMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC752094BB7000E80820 /* HeroMapper.swift */; };
+		C613CC7E20950B7500E80820 /* HeroesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC7C20950B7500E80820 /* HeroesCollectionViewCell.swift */; };
+		C613CC7F20950B7500E80820 /* HeroesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C613CC7D20950B7500E80820 /* HeroesCollectionViewCell.xib */; };
 		DE27D94A5296040F06401CD6 /* Pods_Marvel_Heroes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41E8A8E680374C9E860B911 /* Pods_Marvel_Heroes.framework */; };
 		E3AF8FF01ECF682AFC8D5EFF /* Pods_Marvel_HeroesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F1642FBEC439CC618244CA /* Pods_Marvel_HeroesTests.framework */; };
 /* End PBXBuildFile section */
@@ -92,6 +94,8 @@
 		C613CC7020948E2300E80820 /* HeroEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroEntity.swift; sourceTree = "<group>"; };
 		C613CC732094BB2700E80820 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		C613CC752094BB7000E80820 /* HeroMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapper.swift; sourceTree = "<group>"; };
+		C613CC7C20950B7500E80820 /* HeroesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionViewCell.swift; sourceTree = "<group>"; };
+		C613CC7D20950B7500E80820 /* HeroesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HeroesCollectionViewCell.xib; path = ../Views/HeroesCollectionViewCell.xib; sourceTree = "<group>"; };
 		F41E8A8E680374C9E860B911 /* Pods_Marvel_Heroes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_Heroes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F1642FBEC439CC618244CA /* Pods_Marvel_HeroesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_HeroesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -206,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				C613CC3020946DF100E80820 /* HeroesCollectionView.swift */,
+				C613CC7C20950B7500E80820 /* HeroesCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				C613CC3220946E2300E80820 /* HeroesCollectionView.xib */,
+				C613CC7D20950B7500E80820 /* HeroesCollectionViewCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -505,6 +511,7 @@
 			files = (
 				C606F98620946A0C006DEDF8 /* LaunchScreen.storyboard in Resources */,
 				C606F98320946A0C006DEDF8 /* Assets.xcassets in Resources */,
+				C613CC7F20950B7500E80820 /* HeroesCollectionViewCell.xib in Resources */,
 				C613CC3320946E2300E80820 /* HeroesCollectionView.xib in Resources */,
 				C606F98120946A02006DEDF8 /* Main.storyboard in Resources */,
 			);
@@ -566,6 +573,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-Synchronous/Alamofire_Synchronous.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -573,6 +581,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_Synchronous.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +610,7 @@
 				C613CC48209478C600E80820 /* GetHeroesOperation.swift in Sources */,
 				C613CC4A209478D800E80820 /* GetHeroesOperationProtocol.swift in Sources */,
 				C613CC5C20947CEC00E80820 /* Callback.swift in Sources */,
+				C613CC7E20950B7500E80820 /* HeroesCollectionViewCell.swift in Sources */,
 				C613CC432094784A00E80820 /* LoadHeroesParams.swift in Sources */,
 				C613CC7120948E2300E80820 /* HeroEntity.swift in Sources */,
 				C613CC5620947B6200E80820 /* BaseUseCase.swift in Sources */,
@@ -777,10 +787,7 @@
 				DEVELOPMENT_TEAM = 2GF85C9B94;
 				INFOPLIST_FILE = "Marvel Heroes/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jordigamez.Marvel-Heroes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -797,10 +804,7 @@
 				DEVELOPMENT_TEAM = 2GF85C9B94;
 				INFOPLIST_FILE = "Marvel Heroes/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jordigamez.Marvel-Heroes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -817,11 +821,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2GF85C9B94;
 				INFOPLIST_FILE = "Marvel HeroesTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jordigamez.Marvel-HeroesTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -839,11 +839,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2GF85C9B94;
 				INFOPLIST_FILE = "Marvel HeroesTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jordigamez.Marvel-HeroesTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

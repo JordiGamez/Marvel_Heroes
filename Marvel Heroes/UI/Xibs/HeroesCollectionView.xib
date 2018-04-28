@@ -13,14 +13,36 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroesCollectionView" customModule="Marvel_Heroes" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="dow-nw-k1Y"/>
+                <outlet property="heroCollectionView" destination="4LY-0q-KKC" id="AU3-Ib-ppl"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4LY-0q-KKC">
+                    <rect key="frame" x="5" y="25" width="365" height="637"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="0h8-nu-dFr"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OdI-XO-BAh">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
+                </collectionView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="4LY-0q-KKC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="S9f-BV-uXP"/>
+                <constraint firstItem="4LY-0q-KKC" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-5" id="U2p-02-edM"/>
+                <constraint firstItem="4LY-0q-KKC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="mDh-va-LAj"/>
+                <constraint firstItem="4LY-0q-KKC" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-5" id="zjk-TH-vyv"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="56.5" y="53.5"/>
         </view>
     </objects>
 </document>

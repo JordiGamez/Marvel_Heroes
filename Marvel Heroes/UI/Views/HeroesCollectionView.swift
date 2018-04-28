@@ -6,10 +6,13 @@ class HeroesCollectionView: UIView {
     // MARK: - IBOutlets
     
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var heroCollectionView: UICollectionView!
     
     // MARK: - Constants
     
     let viewName = "HeroesCollectionView"
+    let collectionViewCell = "HeroesCollectionViewCell"
+    let collectionViewCellIdentifier = "HeroesCollectionCell"
     
     // MARK: - Initializers
     
@@ -31,5 +34,10 @@ class HeroesCollectionView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+    
+    override func awakeFromNib() {
+        let nibName = UINib(nibName: collectionViewCell, bundle: nil)
+        heroCollectionView.register(nibName, forCellWithReuseIdentifier: collectionViewCellIdentifier)
     }
 }

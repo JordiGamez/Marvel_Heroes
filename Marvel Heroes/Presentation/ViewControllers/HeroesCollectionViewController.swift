@@ -14,10 +14,15 @@ class HeroesCollectionViewController: UIViewController {
     
     @IBOutlet weak var customView: HeroesCollectionView!
     
+    // MARK: - Constants
+    
+    let collectionViewCellIdentifier = "HeroesCollectionCell"
+    
     // MARK: - Variables
     
     var heroesCollectionPresenter: HeroesCollectionPresenter?
     var presenter: HeroesCollectionPresenterProtocol?
+    var heroes: [Hero] = []
     
     // MARK: - Initializers
     
@@ -40,6 +45,9 @@ class HeroesCollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        customView.heroCollectionView.dataSource = self
+        customView.heroCollectionView.delegate = self
         
         // Load the presenter
         loadPresenter(presenter: heroesCollectionPresenter!)
@@ -73,9 +81,48 @@ extension HeroesCollectionViewController: HeroesCollectionViewProtocol {
     ///
     /// - Parameter list: An array containing the heroes
     func showHeroes(list: [Hero]) {
-        for hero in list {
-            print(hero.name)
-            print(hero.image)
-        }
+        heroes = list
+        customView.heroCollectionView.reloadData()
+    }
+}
+
+// MARK: - UICollectionViewDataSource and UICollectionViewDelegate protocol conformance
+
+extension HeroesCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return heroes.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = customView.heroCollectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellIdentifier, for: indexPath) as! HeroesCollectionViewCell
+        
+        cell.displayContent(image: heroes[indexPath.row].image!, name: heroes[indexPath.row].name!)
+        
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout protocol conformance
+
+extension HeroesCollectionViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let yourWidth = collectionView.bounds.width/2
+        let yourHeight = yourWidth
+        return CGSize(width: yourWidth, height: yourHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }
