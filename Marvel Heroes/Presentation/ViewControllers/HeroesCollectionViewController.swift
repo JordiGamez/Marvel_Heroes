@@ -69,5 +69,9 @@ class HeroesCollectionViewController: UIViewController {
 
 extension HeroesCollectionViewController: HeroesCollectionViewProtocol {
     
-    
+    func showHeroes(list: [Hero]) {
+        for hero in list {
+            print(hero.name)
+        }
+    }
 }

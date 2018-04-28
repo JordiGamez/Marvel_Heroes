@@ -10,4 +10,5 @@ import Foundation
 
 protocol HeroesCollectionViewProtocol {
     
+    func showHeroes(list: [Hero])
 }

@@ -14,8 +14,9 @@ class HeroMapper {
         
         var heroList: [Hero] = []
         
-        for item in entity.data.results {
+        for item in entity.heroes {
             let hero = Hero()
+            
             hero.name = item.name
             
             heroList.append(hero)

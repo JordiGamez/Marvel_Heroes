@@ -57,7 +57,7 @@ extension HeroesCollectionPresenter {
         
         override func onResult(result: LoadHeroesResult) {
             if let heroList = result.hero {
-                
+                self.parent.view?.showHeroes(list: heroList)
             }
         }
     }
