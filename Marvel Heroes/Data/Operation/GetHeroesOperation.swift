@@ -1,23 +1,16 @@
-//
-//  GetHeroesOperation.swift
-//  Marvel Heroes
-//
-//  Created by Jordi Gamez on 28/4/18.
-//  Copyright © 2018 Jordi Gamez. All rights reserved.
-//
-
 import Foundation
 
+/// Operation to load the heroes
 class GetHeroesOperation {
     
     // MARK: - Variables
     
-    var dataSource: ApiClientProtocol
+    var client: ApiClientProtocol
     
     // MARK: - Initializers
     
-    init(dataSource: ApiClientProtocol) {
-        self.dataSource = dataSource
+    init(client: ApiClientProtocol) {
+        self.client = client
     }
 }
 
@@ -25,9 +18,13 @@ class GetHeroesOperation {
 
 extension GetHeroesOperation: GetHeroesOperationProtocol {
 
+    /// Loads the heroes
+    ///
+    /// - Returns: An array with the list of
+    /// - Throws: Exception
     func perform() throws -> [Hero] {
         do {
-            let result = try dataSource.getHeroes()
+            let result = try client.getHeroes()
             let heroMapper = HeroMapper()
             return heroMapper.transform(result!)
         } catch let exception {

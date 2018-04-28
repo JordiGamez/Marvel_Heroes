@@ -1,13 +1,6 @@
-//
-//  LoadHeroesUseCase.swift
-//  Marvel Heroes
-//
-//  Created by Jordi Gamez on 28/4/18.
-//  Copyright © 2018 Jordi Gamez. All rights reserved.
-//
-
 import Foundation
 
+/// Use case to load heroes
 class LoadHeroesUseCase: BaseUseCase<LoadHeroesResult, LoadHeroesParams> {
     
     // MARK: - Variables
@@ -23,6 +16,9 @@ class LoadHeroesUseCase: BaseUseCase<LoadHeroesResult, LoadHeroesParams> {
     
     // MARK: - Methods
     
+    /// Executes the use case
+    ///
+    /// - Parameter params: Param class to execute LoadHeroesUseCase
     override func execute(params: LoadHeroesParams) {
         do {
             let result = try operation.perform()

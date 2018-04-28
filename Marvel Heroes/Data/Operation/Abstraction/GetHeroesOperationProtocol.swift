@@ -1,14 +1,11 @@
-//
-//  GetHeroesOperationProtocol.swift
-//  Marvel Heroes
-//
-//  Created by Jordi Gamez on 28/4/18.
-//  Copyright © 2018 Jordi Gamez. All rights reserved.
-//
-
 import Foundation
 
+/// Abstraction for loading the heroes operation
 protocol GetHeroesOperationProtocol {
     
+    /// Loads the heroes
+    ///
+    /// - Returns: A list with the heroes
+    /// - Throws: Exception
     func perform() throws -> [Hero]
 }

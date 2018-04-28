@@ -1,43 +1,39 @@
-//
-//  HeroEntity.swift
-//  Marvel Heroes
-//
-//  Created by Jordi Gamez on 28/4/18.
-//  Copyright © 2018 Jordi Gamez. All rights reserved.
-//
-
 import Foundation
 
+/// HeroEntity for the data layer
 struct HeroEntity {
     
+    // MARK: - Variables
+    
+    var heroes: [HeroAux]
+    
+    // MARK: - Enums
+    
     enum RootKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
     
     enum DataKeys: String, CodingKey {
-        case results = "results"
+        case results
     }
     
     enum ResultsKeys: String, CodingKey {
-        case name = "name", thumbnail
+        case name, thumbnail
     }
     
     enum ThumbnailKeys: String, CodingKey {
-        case thumbnailPath = "path", thumbnailExtension = "extension"
+        case path, thumbnailExtension = "extension"
     }
-
-    var heroes: [HeroAux]
+    
+    // MARK: - Structs
+    
+    struct HeroAux: Decodable {
+        var name: String
+        var image: String
+    }
 }
 
-struct HeroAux: Decodable {
-    var name: String
-    var image: Image = Image(thumbnailPath: "", thumbnailExtension: "")
-}
-
-struct Image: Codable {
-    var thumbnailPath: String
-    var thumbnailExtension: String
-}
+// MARK: - Decodable protocol conformance
 
 extension HeroEntity: Decodable {
     
@@ -49,8 +45,16 @@ extension HeroEntity: Decodable {
         do {
             var resultsUnkeyedContainer = try containerData.nestedUnkeyedContainer(forKey: .results)
             while !resultsUnkeyedContainer.isAtEnd {
-                let reviewCountContainer = try resultsUnkeyedContainer.nestedContainer(keyedBy: ResultsKeys.self)
-                heroesAux.append(HeroAux(name: try reviewCountContainer.decode(String.self, forKey: .name), image: Image(thumbnailPath: "", thumbnailExtension: "")))
+                let resultsContainer = try resultsUnkeyedContainer.nestedContainer(keyedBy: ResultsKeys.self)
+                
+                let thumbnailContainer = try resultsContainer.nestedContainer(keyedBy: ThumbnailKeys.self, forKey: .thumbnail)
+                let thumbnailPath = try thumbnailContainer.decode(String.self, forKey: .path)
+                let thumbnailExtension = try thumbnailContainer.decode(String.self, forKey: .thumbnailExtension)
+                
+                heroesAux.append(HeroAux(
+                    name: try resultsContainer.decode(String.self, forKey: .name),
+                    image: thumbnailPath + "." + thumbnailExtension)
+                )
             }
         } catch let error {
             print(error)

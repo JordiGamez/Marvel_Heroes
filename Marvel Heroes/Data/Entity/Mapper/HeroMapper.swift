@@ -16,8 +16,8 @@ class HeroMapper {
         
         for item in entity.heroes {
             let hero = Hero()
-            
             hero.name = item.name
+            hero.image = item.image
             
             heroList.append(hero)
         }

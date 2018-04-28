@@ -28,6 +28,11 @@ class BaseUseCase<T, Params>: UseCase<T, Params> {
     
     // MARK: - Methods
     
+    /// Executes the use case
+    ///
+    /// - Parameters:
+    ///   - callback: Send a callback element to receive result events
+    ///   - params: The Params class of the use case
     override func execute(callback: Callback<Result>, params: Parameters) {
         self.callback = callback
         
@@ -42,6 +47,9 @@ class BaseUseCase<T, Params>: UseCase<T, Params> {
     
     func execute(params: Parameters) { fatalError() }
     
+    /// Called when the result is correct
+    ///
+    /// - Parameter result: The result object
     func onResult(result: T) {
         DispatchQueue.main.async {
             self.callback?.onResult(result: result)

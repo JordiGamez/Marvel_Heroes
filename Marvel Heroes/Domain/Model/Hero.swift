@@ -13,4 +13,5 @@ class Hero {
     // MARK: - Variables
     
     var name: String?
+    var image: String?
 }

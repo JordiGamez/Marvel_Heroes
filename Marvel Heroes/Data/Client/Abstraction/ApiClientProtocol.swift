@@ -10,5 +10,9 @@ import Foundation
 
 protocol ApiClientProtocol {
     
+    /// Gets the heroes from the Api
+    ///
+    /// - Returns: A HeroEntity object
+    /// - Throws: Exception
     func getHeroes() throws -> HeroEntity?
 }

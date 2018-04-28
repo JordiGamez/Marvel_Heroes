@@ -267,8 +267,8 @@
 		C613CC3B209475F100E80820 /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
-				C613CC3C2094760700E80820 /* LoadHeroesUseCase.swift */,
 				C613CC5520947B6200E80820 /* BaseUseCase.swift */,
+				C613CC3C2094760700E80820 /* LoadHeroesUseCase.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";

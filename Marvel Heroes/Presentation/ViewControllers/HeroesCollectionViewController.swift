@@ -23,7 +23,7 @@ class HeroesCollectionViewController: UIViewController {
     
     init(_ coder: NSCoder? = nil) {
         
-        heroesCollectionPresenter = HeroesCollectionPresenter(loadHeroesUseCase: LoadHeroesUseCase(doInBackground: true, operation: GetHeroesOperation(dataSource: ApiClient())))
+        heroesCollectionPresenter = HeroesCollectionPresenter(loadHeroesUseCase: LoadHeroesUseCase(doInBackground: true, operation: GetHeroesOperation(client: ApiClient())))
         
         if let coder = coder {
             super.init(coder: coder)!
@@ -69,9 +69,13 @@ class HeroesCollectionViewController: UIViewController {
 
 extension HeroesCollectionViewController: HeroesCollectionViewProtocol {
     
+    /// Displays a list of heroes
+    ///
+    /// - Parameter list: An array containing the heroes
     func showHeroes(list: [Hero]) {
         for hero in list {
             print(hero.name)
+            print(hero.image)
         }
     }
 }

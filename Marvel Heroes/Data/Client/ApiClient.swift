@@ -1,17 +1,10 @@
-//
-//  ApiClient.swift
-//  Marvel Heroes
-//
-//  Created by Jordi Gamez on 28/4/18.
-//  Copyright © 2018 Jordi Gamez. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 import Alamofire_Synchronous
 import SwiftyJSON
 import CryptoSwift
 
+/// Responsible for communication with the Marvel API
 class ApiClient: BaseClient {
     
     // MARK: - Constants
@@ -31,6 +24,10 @@ class ApiClient: BaseClient {
 
 extension ApiClient: ApiClientProtocol {
     
+    /// Gets the heroes from the Api
+    ///
+    /// - Returns: A HeroEntity object
+    /// - Throws: Exception
     func getHeroes() throws -> HeroEntity? {
         
         // Endpoint
@@ -49,6 +46,7 @@ extension ApiClient: ApiClientProtocol {
         do {
             let result = try doRequest(url: url + endpoint + "?ts=" + timestamp + "&" + apikey + "&" + hash, method: .get, encoding: URLEncoding.default, headers: nil, attempt: attempt, maxNumberOfTries: numberOfTries, delayTime: delay)
             
+            // Decode
             let heroEntityList = try? jsonDecoder.decode(HeroEntity.self, from: result.response)
             
             return heroEntityList
