@@ -39,6 +39,26 @@ extension HeroesCollectionPresenter: HeroesCollectionPresenterProtocol {
     
     /// Load heroes
     func loadHeroes() {
+        loadHeroesUseCase?.execute(callback: LoadHeroesCallback(parent: self), params: LoadHeroesParams())
+    }
+}
+
+// MARK: - Callback for LoadHeroesUseCase
+
+extension HeroesCollectionPresenter {
+    
+    class LoadHeroesCallback: Callback<LoadHeroesResult> {
         
+        var parent: HeroesCollectionPresenter
+        
+        init(parent: HeroesCollectionPresenter) {
+            self.parent = parent
+        }
+        
+        override func onResult(result: LoadHeroesResult) {
+            if let heroList = result.hero {
+                
+            }
+        }
     }
 }

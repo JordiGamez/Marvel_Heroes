@@ -23,7 +23,7 @@ class HeroesCollectionViewController: UIViewController {
     
     init(_ coder: NSCoder? = nil) {
         
-        heroesCollectionPresenter = HeroesCollectionPresenter(loadHeroesUseCase: LoadHeroesUseCase())
+        heroesCollectionPresenter = HeroesCollectionPresenter(loadHeroesUseCase: LoadHeroesUseCase(doInBackground: true, operation: GetHeroesOperation(dataSource: ApiClient())))
         
         if let coder = coder {
             super.init(coder: coder)!

@@ -7,7 +7,10 @@ target 'Marvel Heroes' do
 
   # Pods for Marvel Heroes
   pod 'Alamofire', '~> 4.7'
-
+  pod 'Alamofire-Synchronous'
+  pod 'SwiftyJSON'
+  pod 'CryptoSwift'
+  
   target 'Marvel HeroesTests' do
     inherit! :search_paths
     # Pods for testing
