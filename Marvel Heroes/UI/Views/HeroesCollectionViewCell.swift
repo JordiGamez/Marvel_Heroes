@@ -31,9 +31,10 @@ class HeroesCollectionViewCell: UICollectionViewCell {
     /// Display the content in the cell
     ///
     /// - Parameters:
-    ///   - image: The hero picture
+    ///   - image: The hero picture url
     ///   - name: The hero name
     func displayContent(image: String, name: String) {
+        // Image cache
         heroImage.kf.setImage(with: URL(string: image)!)
         
         // Remove all parenthesis to avoid having a long hero name
