@@ -33,6 +33,9 @@ extension ApiClient: ApiClientProtocol {
         // Endpoint
         let endpoint = Values.Server.Endpoints.Characters.rawValue
         
+        // Api key
+        let limit = "limit=\(Values.Server.Api.Limit.rawValue)"
+        
         // Timestamp
         let timestamp = String(Date().toMillis())
         
@@ -44,7 +47,7 @@ extension ApiClient: ApiClientProtocol {
         
         // Request
         do {
-            let result = try doRequest(url: url + endpoint + "?ts=" + timestamp + "&" + apikey + "&" + hash, method: .get, encoding: URLEncoding.default, headers: nil, attempt: attempt, maxNumberOfTries: numberOfTries, delayTime: delay)
+            let result = try doRequest(url: url + endpoint + "?" + limit + "&ts=" + timestamp + "&" + apikey + "&" + hash, method: .get, encoding: URLEncoding.default, headers: nil, attempt: attempt, maxNumberOfTries: numberOfTries, delayTime: delay)
             
             // Decode
             let heroEntityList = try? jsonDecoder.decode(HeroEntity.self, from: result.response)

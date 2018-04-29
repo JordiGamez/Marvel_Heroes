@@ -84,6 +84,21 @@ extension HeroesCollectionViewController: HeroesCollectionViewProtocol {
         heroes = list
         customView.heroCollectionView.reloadData()
     }
+    
+    /// Displays a loader
+    func showLoading() {
+        customView.loadingView.isHidden = false
+    }
+    
+    /// Hides the loader
+    func hideLoading() {
+        customView.loadingView.isHidden = true
+    }
+    
+    /// Displays the collection list
+    func showHeroCollectionList() {
+        customView.heroCollectionView.isHidden = false
+    }
 }
 
 // MARK: - UICollectionViewDataSource and UICollectionViewDelegate protocol conformance

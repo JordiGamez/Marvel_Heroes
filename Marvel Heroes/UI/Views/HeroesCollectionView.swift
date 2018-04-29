@@ -18,7 +18,22 @@ class HeroesCollectionView: UIView {
             navigationItem.title = "Marvel Heroes"
         }
     }
-    @IBOutlet weak var heroCollectionView: UICollectionView!
+    @IBOutlet weak var heroCollectionView: UICollectionView! {
+        didSet {
+            heroCollectionView.isHidden = true
+        }
+    }
+    @IBOutlet weak var loadingView: UIView! {
+        didSet {
+            loadingView.isHidden = true
+        }
+    }
+    @IBOutlet weak var loadingLabel: UILabel! {
+        didSet {
+            loadingLabel.text = "Loading heroes..."
+            loadingLabel.font = loadingLabel.font.withSize(12.0)
+        }
+    }
     
     // MARK: - Constants
     

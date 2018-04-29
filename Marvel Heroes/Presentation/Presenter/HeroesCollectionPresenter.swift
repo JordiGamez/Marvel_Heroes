@@ -32,6 +32,8 @@ extension HeroesCollectionPresenter: HeroesCollectionPresenterProtocol {
     
     /// Load heroes
     func loadHeroes() {
+        self.view?.showLoading()
+        
         loadHeroesUseCase?.execute(callback: LoadHeroesCallback(parent: self), params: LoadHeroesParams())
     }
 }
@@ -49,8 +51,10 @@ extension HeroesCollectionPresenter {
         }
         
         override func onResult(result: LoadHeroesResult) {
+            self.parent.view?.hideLoading()
             if let heroList = result.hero {
                 self.parent.view?.showHeroes(list: heroList)
+                self.parent.view?.showHeroCollectionList()
             }
         }
     }

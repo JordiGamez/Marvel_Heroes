@@ -19,6 +19,8 @@ enum Values {
             case PublicKey = "394a5b939b49d78b49c8c77070616649"
             
             case PrivateKey = "faac9f26828ac472ffc438038f5cfd3b30a3a581"
+            
+            case Limit = "40"
         }
         
         enum Endpoints: String {

@@ -7,4 +7,13 @@ protocol HeroesCollectionViewProtocol {
     ///
     /// - Parameter list: An array containing the heroes
     func showHeroes(list: [Hero])
+    
+    /// Displays a loader
+    func showLoading()
+    
+    /// Hides the loader
+    func hideLoading()
+    
+    /// Displays the collection list
+    func showHeroCollectionList()
 }
