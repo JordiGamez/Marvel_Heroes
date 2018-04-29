@@ -26,15 +26,19 @@ extension ApiClient: ApiClientProtocol {
     
     /// Gets the heroes from the Api
     ///
+    /// - Parameter offset: Skip the specified number of resources in the result set
     /// - Returns: A HeroEntity object
     /// - Throws: Exception
-    func getHeroes() throws -> HeroEntity? {
+    func getHeroes(offset: Int = 0) throws -> HeroEntity? {
         
         // Endpoint
         let endpoint = Values.Server.Endpoints.Characters.rawValue
         
-        // Api key
+        // Limit
         let limit = "limit=\(Values.Server.Api.Limit.rawValue)"
+        
+        // Offset
+        let offset = "offset=\(offset)"
         
         // Timestamp
         let timestamp = String(Date().toMillis())
@@ -47,7 +51,7 @@ extension ApiClient: ApiClientProtocol {
         
         // Request
         do {
-            let result = try doRequest(url: url + endpoint + "?" + limit + "&ts=" + timestamp + "&" + apikey + "&" + hash, method: .get, encoding: URLEncoding.default, headers: nil, attempt: attempt, maxNumberOfTries: numberOfTries, delayTime: delay)
+            let result = try doRequest(url: url + endpoint + "?" + limit + "&" + offset + "&ts=" + timestamp + "&" + apikey + "&" + hash, method: .get, encoding: URLEncoding.default, headers: nil, attempt: attempt, maxNumberOfTries: numberOfTries, delayTime: delay)
             
             // Decode
             let heroEntityList = try? jsonDecoder.decode(HeroEntity.self, from: result.response)

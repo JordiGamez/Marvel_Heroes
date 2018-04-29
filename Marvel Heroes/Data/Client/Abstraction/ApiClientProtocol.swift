@@ -12,7 +12,8 @@ protocol ApiClientProtocol {
     
     /// Gets the heroes from the Api
     ///
+    /// - Parameter offset: Skip the specified number of resources in the result set
     /// - Returns: A HeroEntity object
     /// - Throws: Exception
-    func getHeroes() throws -> HeroEntity?
+    func getHeroes(offset: Int) throws -> HeroEntity?
 }

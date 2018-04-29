@@ -27,8 +27,7 @@ class HeroesCollectionViewController: UIViewController {
     // MARK: - Initializers
     
     init(_ coder: NSCoder? = nil) {
-        
-        heroesCollectionPresenter = HeroesCollectionPresenter(loadHeroesUseCase: LoadHeroesUseCase(doInBackground: true, operation: GetHeroesOperation(client: ApiClient())))
+        heroesCollectionPresenter = HeroesCollectionPresenter(loadHeroesUseCase: LoadHeroesUseCase(doInBackground: true, operation: GetHeroesOperation(client: ApiClient())), networkProvider: NetworkProvider())
         
         if let coder = coder {
             super.init(coder: coder)!
@@ -46,6 +45,7 @@ class HeroesCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set the delegate and data source
         customView.heroCollectionView.dataSource = self
         customView.heroCollectionView.delegate = self
         
@@ -54,6 +54,9 @@ class HeroesCollectionViewController: UIViewController {
         
         // Bind the presenter with the view
         presenter?.bind(view: self)
+        
+        // Load IBActions
+        loadIBActions()
         
         // Load heroes
         presenter?.loadHeroes()
@@ -71,6 +74,22 @@ class HeroesCollectionViewController: UIViewController {
     func loadPresenter(presenter: HeroesCollectionPresenterProtocol) {
         self.presenter = presenter
     }
+    
+    /// Reloads the collection list
+    func reloadList() {
+        customView.heroCollectionView.reloadData()
+    }
+    
+    /// Loads the IBActions for this view controller
+    func loadIBActions() {
+        customView.errorButton.addTarget(self, action: #selector(self.tryAgain), for: .touchUpInside)
+    }
+    
+    // MARK: - IBactions
+    
+    @objc func tryAgain() {
+        self.presenter?.loadHeroes()
+    }
 }
 
 // MARK: - HeroesCollectionViewProtocol protocol conformance
@@ -82,7 +101,15 @@ extension HeroesCollectionViewController: HeroesCollectionViewProtocol {
     /// - Parameter list: An array containing the heroes
     func showHeroes(list: [Hero]) {
         heroes = list
-        customView.heroCollectionView.reloadData()
+        reloadList()
+    }
+    
+    /// Add a list of heroes to the current list
+    ///
+    /// - Parameter list: An array containing the new heroes
+    func addHeroes(list: [Hero]) {
+        heroes.append(contentsOf: list)
+        reloadList()
     }
     
     /// Displays a loader
@@ -98,6 +125,11 @@ extension HeroesCollectionViewController: HeroesCollectionViewProtocol {
     /// Displays the collection list
     func showHeroCollectionList() {
         customView.heroCollectionView.isHidden = false
+    }
+    
+    /// Displays an error if something went wrong
+    func showError() {
+        customView.errorView.isHidden = false
     }
 }
 
@@ -116,6 +148,12 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
         cell.displayContent(image: heroes[indexPath.row].image!, name: heroes[indexPath.row].name!)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == heroes.count - 10 {
+            self.presenter?.loadHeroes()
+        }
     }
 }
 

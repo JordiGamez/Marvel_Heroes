@@ -8,6 +8,11 @@ protocol HeroesCollectionViewProtocol {
     /// - Parameter list: An array containing the heroes
     func showHeroes(list: [Hero])
     
+    /// Add a list of heroes to the current list
+    ///
+    /// - Parameter list: An array containing the new heroes
+    func addHeroes(list: [Hero])
+    
     /// Displays a loader
     func showLoading()
     
@@ -16,4 +21,7 @@ protocol HeroesCollectionViewProtocol {
     
     /// Displays the collection list
     func showHeroCollectionList()
+    
+    /// Displays an error if something went wrong
+    func showError()
 }

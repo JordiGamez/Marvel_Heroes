@@ -34,6 +34,24 @@ class HeroesCollectionView: UIView {
             loadingLabel.font = loadingLabel.font.withSize(12.0)
         }
     }
+    @IBOutlet weak var errorView: UIView! {
+        didSet {
+            errorView.isHidden = true
+        }
+    }
+    @IBOutlet weak var errorLabel: UILabel! {
+        didSet {
+            errorLabel.text = "Something went wrong"
+            errorLabel.font = errorLabel.font.withSize(12.0)
+        }
+    }
+    @IBOutlet weak var errorButton: UIButton! {
+        didSet {
+            errorButton.setTitle("Try again", for: .normal)
+            errorButton.backgroundColor = .black
+            errorButton.tintColor = .white
+        }
+    }
     
     // MARK: - Constants
     

@@ -22,9 +22,9 @@ extension GetHeroesOperation: GetHeroesOperationProtocol {
     ///
     /// - Returns: An array with the list of
     /// - Throws: Exception
-    func perform() throws -> [Hero] {
+    func perform(offset: Int = 0) throws -> [Hero] {
         do {
-            let result = try client.getHeroes()
+            let result = try client.getHeroes(offset: offset)
             let heroMapper = HeroMapper()
             return heroMapper.transform(result!)
         } catch let exception {

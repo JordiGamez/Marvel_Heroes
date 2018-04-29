@@ -11,11 +11,14 @@ class HeroesCollectionPresenter {
     // MARK: - Variables
     
     var view: HeroesCollectionViewProtocol?
+    var networkProvider: NetworkProvider
+    var numberOfHeroes = 0
     
     // MARK: - Initializers
     
-    init(loadHeroesUseCase: LoadHeroesUseCase) {
+    init(loadHeroesUseCase: LoadHeroesUseCase, networkProvider: NetworkProvider) {
         self.loadHeroesUseCase = loadHeroesUseCase
+        self.networkProvider = networkProvider
     }
 }
 
@@ -32,9 +35,18 @@ extension HeroesCollectionPresenter: HeroesCollectionPresenterProtocol {
     
     /// Load heroes
     func loadHeroes() {
-        self.view?.showLoading()
+        if !networkProvider.deviceHasInternetConnection() {
+            self.view?.hideLoading()
+            self.view?.showError()
+            return
+        }
         
-        loadHeroesUseCase?.execute(callback: LoadHeroesCallback(parent: self), params: LoadHeroesParams())
+        // If it is initial load heroes call
+        if numberOfHeroes == 0 {
+            self.view?.showLoading()
+        }
+        
+        loadHeroesUseCase?.execute(callback: LoadHeroesCallback(parent: self), params: LoadHeroesParams(offset: numberOfHeroes))
     }
 }
 
@@ -52,9 +64,16 @@ extension HeroesCollectionPresenter {
         
         override func onResult(result: LoadHeroesResult) {
             self.parent.view?.hideLoading()
+            
             if let heroList = result.hero {
-                self.parent.view?.showHeroes(list: heroList)
-                self.parent.view?.showHeroCollectionList()
+                if self.parent.numberOfHeroes == 0 {
+                    self.parent.view?.showHeroes(list: heroList)
+                    self.parent.view?.showHeroCollectionList()
+                } else {
+                    self.parent.view?.addHeroes(list: heroList)
+                }
+                
+                self.parent.numberOfHeroes += heroList.count
             }
         }
     }

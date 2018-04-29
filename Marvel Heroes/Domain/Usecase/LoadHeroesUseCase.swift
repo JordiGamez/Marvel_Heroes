@@ -21,7 +21,7 @@ class LoadHeroesUseCase: BaseUseCase<LoadHeroesResult, LoadHeroesParams> {
     /// - Parameter params: Param class to execute LoadHeroesUseCase
     override func execute(params: LoadHeroesParams) {
         do {
-            let result = try operation.perform()
+            let result = try operation.perform(offset: params.offset)
             let loadHeroesResult = LoadHeroesResult()
             loadHeroesResult.hero = result
             onResult(result: loadHeroesResult)
