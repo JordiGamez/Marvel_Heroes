@@ -28,6 +28,8 @@ enum Values {
             case Characters = "characters"
             
             case CharacterDetail = "characters/"
+            
+            case CharacterComics = "characters/{heroId}/comics"
         }
     }
 }

@@ -21,18 +21,35 @@ class HeroDetailView: UIView {
     @IBOutlet weak var nameLabel: UILabel! {
         didSet {
             nameLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
+            nameLabel.textColor = .white
         }
     }
     @IBOutlet weak var imageUIImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel! {
         didSet {
-            descriptionLabel.font = descriptionLabel.font.withSize(16.0)
+            descriptionLabel.isHidden = true
+            descriptionLabel.font = descriptionLabel.font.withSize(14.0)
+            descriptionLabel.textColor = .white
+        }
+    }
+    @IBOutlet weak var comicHeaderLabel: UILabel! {
+        didSet {
+            comicHeaderLabel.isHidden = true
+            comicHeaderLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
+            comicHeaderLabel.text = "Comics"
+        }
+    }
+    @IBOutlet weak var comicCollectionView: UICollectionView! {
+        didSet {
+            comicCollectionView.isHidden = true
         }
     }
     
     // MARK: - Constants
     
     let viewName = "HeroDetailView"
+    let collectionViewCell = "HeroDetailComicViewCell"
+    let collectionViewCellIdentifier = "ComicsCollectionCell"
     
     // MARK: - Initializers
     
@@ -54,5 +71,10 @@ class HeroDetailView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+    
+    override func awakeFromNib() {
+        let nibName = UINib(nibName: collectionViewCell, bundle: nil)
+        comicCollectionView.register(nibName, forCellWithReuseIdentifier: collectionViewCellIdentifier)
     }
 }

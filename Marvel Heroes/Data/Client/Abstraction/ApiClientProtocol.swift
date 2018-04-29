@@ -23,4 +23,11 @@ protocol ApiClientProtocol {
     /// - Returns: A HeroDetailEntity object
     /// - Throws: Exception
     func getHeroDetail(heroId: String) throws -> HeroDetailEntity?
+    
+    /// Gets all the available comic information of a hero
+    ///
+    /// - Parameter heroId: The hero id
+    /// - Returns: A ComicDetailEntity object
+    /// - Throws: Exception
+    func getComicDetails(heroId: String) throws -> ComicDetailEntity?
 }

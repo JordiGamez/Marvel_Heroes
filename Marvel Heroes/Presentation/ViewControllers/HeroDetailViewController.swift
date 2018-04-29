@@ -7,13 +7,16 @@
 //
 
 import UIKit
-import Kingfisher
 
 class HeroDetailViewController: UIViewController {
 
     // MARK: - IBOutlets
     
     @IBOutlet weak var customView: HeroDetailView!
+    
+    // MARK: - Constants
+    
+    let collectionViewCellIdentifier = "ComicsCollectionCell"
     
     // MARK: - Variables
     
@@ -22,11 +25,12 @@ class HeroDetailViewController: UIViewController {
     var heroId: String?
     var heroName: String?
     var heroImageUrl: String?
+    var comics: [Comic] = []
     
     // MARK: - Initializers
     
     init(_ coder: NSCoder? = nil) {
-        heroDetailPresenter = HeroDetailPresenter(loadHeroDetailUseCase: LoadHeroDetailUseCase(doInBackground: true, operation: GetHeroDetailOperation(client: ApiClient())), networkProvider: NetworkProvider())
+        heroDetailPresenter = HeroDetailPresenter(loadHeroDetailUseCase: LoadHeroDetailUseCase(doInBackground: true, operation: GetHeroDetailOperation(client: ApiClient())), loadHeroDetailComicsUseCase: LoadHeroDetailComicsUseCase(doInBackground: true, operation: GetHeroDetailComicsOperation(client: ApiClient())), networkProvider: NetworkProvider())
         
         if let coder = coder {
             super.init(coder: coder)!
@@ -43,6 +47,10 @@ class HeroDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set the delegate and data source
+        customView.comicCollectionView.dataSource = self
+        customView.comicCollectionView.delegate = self
         
         /// Update the view with content
         updateView()
@@ -75,6 +83,11 @@ class HeroDetailViewController: UIViewController {
     func loadPresenter(presenter: HeroDetailPresenterProtocol) {
         self.presenter = presenter
     }
+    
+    /// Reloads the collection list
+    func reloadList() {
+        customView.comicCollectionView.reloadData()
+    }
 }
 
 // MARK: - HeroDetailViewProtocol protocol conformance
@@ -85,6 +98,79 @@ extension HeroDetailViewController: HeroDetailViewProtocol {
     ///
     /// - Parameter showHero: The hero object
     func showHero(hero: Hero) {
-        customView.descriptionLabel.text = hero.description
+        if hero.description != "" {
+            customView.descriptionLabel.text = hero.description
+            customView.descriptionLabel.isHidden = false
+        }
+    }
+    
+    /// Show the hero comics information
+    ///
+    /// - Parameter comicList: The hero comics
+    func showComics(comicList: [Comic]) {
+        comics = comicList
+        reloadList()
+        presenter?.displayComicsContainer(numberOfComics: comicList.count)
+    }
+    
+    /// Display the comics header
+    func showComicsHeader() {
+        customView.comicHeaderLabel.isHidden = false
+    }
+    
+    /// Hide the comics header
+    func hideComicsHeader() {
+        customView.comicHeaderLabel.isHidden = true
+    }
+    
+    /// Display the comics header
+    func showComicsCollection() {
+        customView.comicCollectionView.isHidden = false
+    }
+    
+    /// Hide the comics header
+    func hideComicsCollection() {
+        customView.comicCollectionView.isHidden = true
+    }
+}
+
+// MARK: - UICollectionViewDataSource and UICollectionViewDelegate protocol conformance
+
+extension HeroDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return comics.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = customView.comicCollectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellIdentifier, for: indexPath) as! HeroDetailComicViewCell
+        
+        cell.displayContent(image: comics[indexPath.row].image!)
+        
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout protocol conformance
+
+extension HeroDetailViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let yourWidth = collectionView.bounds.width/2.5
+        let yourHeight = collectionView.bounds.height
+        return CGSize(width: yourWidth, height: yourHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
     }
 }

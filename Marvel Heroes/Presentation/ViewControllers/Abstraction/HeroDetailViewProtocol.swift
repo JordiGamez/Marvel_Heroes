@@ -7,4 +7,21 @@ protocol HeroDetailViewProtocol {
     ///
     /// - Parameter showHero: The hero object
     func showHero(hero: Hero)
+    
+    /// Show the hero comics information
+    ///
+    /// - Parameter comicList: The hero comics
+    func showComics(comicList: [Comic])
+    
+    /// Display the comics header
+    func showComicsHeader()
+    
+    /// Hide the comics header
+    func hideComicsHeader()
+    
+    /// Display the comics header
+    func showComicsCollection()
+    
+    /// Hide the comics header
+    func hideComicsCollection()
 }

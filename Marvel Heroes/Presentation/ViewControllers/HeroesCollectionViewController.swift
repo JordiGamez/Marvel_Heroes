@@ -88,6 +88,7 @@ class HeroesCollectionViewController: UIViewController {
         customView.errorButton.addTarget(self, action: #selector(self.tryAgain), for: .touchUpInside)
     }
     
+    // Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifier {
             let selectedIndexPath = sender as? NSIndexPath

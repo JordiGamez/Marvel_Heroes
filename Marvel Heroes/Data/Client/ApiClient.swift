@@ -93,4 +93,37 @@ extension ApiClient: ApiClientProtocol {
             throw exception
         }
     }
+    
+    /// Gets all the available comic information of a hero
+    ///
+    /// - Parameter heroId: The hero id
+    /// - Returns: A ComicDetailEntity object
+    /// - Throws: Exception
+    func getComicDetails(heroId: String) throws -> ComicDetailEntity? {
+        
+        // Endpoint
+        var endpoint = Values.Server.Endpoints.CharacterComics.rawValue
+        endpoint = endpoint.replacingOccurrences(of: "{heroId}", with: heroId)
+        
+        // Timestamp
+        let timestamp = String(Date().toMillis())
+        
+        // Api key
+        let apikey = "apikey=\(Values.Server.Api.PublicKey.rawValue)"
+        
+        // Hash value
+        let hash = "hash=\((timestamp + Values.Server.Api.PrivateKey.rawValue + Values.Server.Api.PublicKey.rawValue).md5())"
+        
+        // Request
+        do {
+            let result = try doRequest(url: url + endpoint + "?&ts=" + timestamp + "&" + apikey + "&" + hash, method: .get, encoding: URLEncoding.default, headers: nil, attempt: attempt, maxNumberOfTries: numberOfTries, delayTime: delay)
+            
+            // Decode
+            let heroDetailEntity = try? jsonDecoder.decode(ComicDetailEntity.self, from: result.response)
+            
+            return heroDetailEntity
+        } catch let exception as ConnectivityException {
+            throw exception
+        }
+    }
 }
