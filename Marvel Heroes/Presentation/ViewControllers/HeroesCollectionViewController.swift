@@ -52,6 +52,9 @@ class HeroesCollectionViewController: UIViewController {
         customView.heroCollectionView.dataSource = self
         customView.heroCollectionView.delegate = self
         
+        /// Update the view with content
+        updateView()
+        
         // Load the presenter
         loadPresenter(presenter: heroesCollectionPresenter!)
         
@@ -70,6 +73,11 @@ class HeroesCollectionViewController: UIViewController {
     }
     
     // MARK: - Methods
+    
+    /// Update the view with the information from the collection view
+    func updateView() {
+        navigationItem.title = "Marvel Heroes"
+    }
     
     /// Sets the presenter
     ///

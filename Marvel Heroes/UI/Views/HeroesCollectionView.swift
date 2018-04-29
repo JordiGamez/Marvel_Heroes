@@ -6,18 +6,18 @@ class HeroesCollectionView: UIView {
     // MARK: - IBOutlets
     
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var navigationBar: UINavigationBar! {
-        didSet {
-            navigationBar.isTranslucent = false
-            navigationBar.backgroundColor = .black
-            navigationBar.tintColor = .white
-        }
-    }
-    @IBOutlet weak var navigationItem: UINavigationItem! {
-        didSet {
-            navigationItem.title = "Marvel Heroes"
-        }
-    }
+//    @IBOutlet weak var navigationBar: UINavigationBar! {
+//        didSet {
+//            navigationBar.isTranslucent = false
+//            navigationBar.backgroundColor = .black
+//            navigationBar.tintColor = .white
+//        }
+//    }
+//    @IBOutlet weak var navigationItem: UINavigationItem! {
+//        didSet {
+//            navigationItem.title = "Marvel Heroes"
+//        }
+//    }
     @IBOutlet weak var heroCollectionView: UICollectionView! {
         didSet {
             heroCollectionView.isHidden = true

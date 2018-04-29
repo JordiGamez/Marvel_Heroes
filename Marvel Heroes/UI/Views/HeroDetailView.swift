@@ -16,6 +16,12 @@ class HeroDetailView: UIView {
     @IBOutlet weak var navigationTitle: UINavigationItem! {
         didSet {
             navigationTitle.title = "Hero details"
+            navigationTitle.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        }
+    }
+    @IBOutlet weak var navigationBackButton: UIBarButtonItem! {
+        didSet {
+            navigationBackButton.tintColor = .white
         }
     }
     @IBOutlet weak var nameLabel: UILabel! {
