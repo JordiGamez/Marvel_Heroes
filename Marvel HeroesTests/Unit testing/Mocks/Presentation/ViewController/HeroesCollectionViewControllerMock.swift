@@ -12,6 +12,8 @@ class HeroesCollectionViewControllerMock {
     var showHeroCollectionListIsCalled = false
     var showErrorIsCalled = false
     var hideErrorIsCalled = false
+    var showErrorLoadingMoreIsCalled = false
+    var hideErrorLoadingMoreIsCalled = false
 }
 
 // MARK: - HeroesCollectionViewProtocol protocol conformance
@@ -55,5 +57,15 @@ extension HeroesCollectionViewControllerMock: HeroesCollectionViewProtocol {
     /// Hides the error view
     func hideError() {
         hideErrorIsCalled = true
+    }
+    
+    /// Displays an error if something went wrong when loading more items
+    func showErrorLoadingMore() {
+        showErrorLoadingMoreIsCalled = true
+    }
+    
+    /// Hides the error view
+    func hideErrorLoadingMore() {
+        hideErrorLoadingMoreIsCalled = true
     }
 }

@@ -38,21 +38,7 @@ class BaseClient {
         case .success(let response):
             return (response, responseHeaders!)
         case .failure:
-            if attempt <= maxNumberOfTries {
-                
-                // Delay
-                sleep(UInt32(delayTime))
-                
-                // Retry the request
-                do {
-                    _ = try self.doRequest(url: url, method: method, encoding: encoding, headers: headers, attempt: attempt, maxNumberOfTries: maxNumberOfTries, delayTime: delayTime)
-                } catch let exception as Exception {
-                    throw exception
-                }
-            } else {
-                throw ConnectivityException()
-            }
+            throw ConnectivityException()
         }
-        throw UnknownException()
     }
 }

@@ -52,6 +52,20 @@ class HeroesCollectionView: UIView {
             errorButton.tintColor = .white
         }
     }
+    @IBOutlet weak var errorLoadingMoreHeroesView: UIView! {
+        didSet {
+            errorLoadingMoreHeroesView.isHidden = true
+            errorLoadingMoreHeroesView.backgroundColor = .black
+            errorLoadingMoreHeroesView.alpha = 0.9
+        }
+    }
+    @IBOutlet weak var errorLoadingMoreHeroesLabel: UILabel! {
+        didSet {
+            errorLoadingMoreHeroesLabel.text = "Unable to load more heroes"
+            errorLoadingMoreHeroesLabel.font = errorLoadingMoreHeroesLabel.font.withSize(12.0)
+            errorLoadingMoreHeroesLabel.textColor = .white
+        }
+    }
     
     // MARK: - Constants
     

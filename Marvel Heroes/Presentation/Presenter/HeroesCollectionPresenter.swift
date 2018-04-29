@@ -35,7 +35,7 @@ extension HeroesCollectionPresenter: HeroesCollectionPresenterProtocol {
     
     /// Load heroes
     func loadHeroes() {
-        if !networkProvider.deviceHasInternetConnection() {
+        if !networkProvider.deviceHasInternetConnection() && numberOfHeroes == 0 {
             self.view?.hideLoading()
             self.view?.showError()
             return
@@ -65,6 +65,7 @@ extension HeroesCollectionPresenter {
         // Correct result
         override func onResult(result: LoadHeroesResult) {
             self.parent.view?.hideError()
+            self.parent.view?.hideErrorLoadingMore()
             self.parent.view?.hideLoading()
             
             if let heroList = result.hero {
@@ -82,13 +83,21 @@ extension HeroesCollectionPresenter {
         // Connectivity error
         override func onConnectivityError(exception: ConnectivityException) {
             self.parent.view?.hideLoading()
-            self.parent.view?.showError()
+            if parent.numberOfHeroes == 0 {
+                self.parent.view?.showError()
+            } else {
+                self.parent.view?.showErrorLoadingMore()
+            }
         }
         
         // Error
         override func onGenericError(exception: Exception) {
             self.parent.view?.hideLoading()
-            self.parent.view?.showError()
+            if parent.numberOfHeroes == 0 {
+                self.parent.view?.showError()
+            } else {
+                self.parent.view?.showErrorLoadingMore()
+            }
         }
     }
 }

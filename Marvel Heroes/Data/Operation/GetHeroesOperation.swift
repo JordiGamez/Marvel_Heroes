@@ -27,7 +27,7 @@ extension GetHeroesOperation: GetHeroesOperationProtocol {
             let result = try client.getHeroes(offset: offset)
             let heroMapper = HeroMapper()
             return heroMapper.transform(result!)
-        } catch let exception {
+        } catch let exception as ConnectivityException {
             throw exception
         }
     }

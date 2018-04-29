@@ -57,7 +57,7 @@ extension ApiClient: ApiClientProtocol {
             let heroEntityList = try? jsonDecoder.decode(HeroEntity.self, from: result.response)
             
             return heroEntityList
-        } catch let exception {
+        } catch let exception as ConnectivityException {
             throw exception
         }
     }

@@ -138,6 +138,16 @@ extension HeroesCollectionViewController: HeroesCollectionViewProtocol {
     func hideError() {
         customView.errorView.isHidden = true
     }
+    
+    /// Displays an error if something went wrong when loading more items
+    func showErrorLoadingMore() {
+        customView.errorLoadingMoreHeroesView.isHidden = false
+    }
+    
+    /// Hides the error view
+    func hideErrorLoadingMore() {
+        customView.errorLoadingMoreHeroesView.isHidden = true
+    }
 }
 
 // MARK: - UICollectionViewDataSource and UICollectionViewDelegate protocol conformance
