@@ -26,6 +26,8 @@ enum Values {
         enum Endpoints: String {
             
             case Characters = "characters"
+            
+            case CharacterDetail = "characters/"
         }
     }
 }

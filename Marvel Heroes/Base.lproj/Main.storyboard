@@ -22,10 +22,29 @@
                     </view>
                     <connections>
                         <outlet property="customView" destination="8bC-Xf-vdC" id="Try-Ld-SEl"/>
+                        <segue destination="Q8R-6n-FMO" kind="show" identifier="showHeroDetail" id="lXn-FE-XLP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Hero Detail View Controller-->
+        <scene sceneID="QpM-km-uhX">
+            <objects>
+                <viewController id="Q8R-6n-FMO" customClass="HeroDetailViewController" customModule="Marvel_Heroes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u3u-Bk-w3w" customClass="HeroDetailView" customModule="Marvel_Heroes" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="QAU-FW-Iql"/>
+                    </view>
+                    <connections>
+                        <outlet property="customView" destination="u3u-Bk-w3w" id="ihw-PN-UOG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xxJ-SZ-HXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1015" y="32"/>
         </scene>
     </scenes>
 </document>

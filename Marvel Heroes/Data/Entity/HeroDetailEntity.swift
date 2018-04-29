@@ -1,11 +1,19 @@
+//
+//  HeroDetailEntity.swift
+//  Marvel Heroes
+//
+//  Created by Jordi Gamez on 29/4/18.
+//  Copyright © 2018 Jordi Gamez. All rights reserved.
+//
+
 import Foundation
 
 /// HeroEntity for the data layer
-struct HeroEntity {
+struct HeroDetailEntity {
     
     // MARK: - Variables
     
-    var heroes: [HeroInfo]
+    var heroes: [HeroDetailInfo]
     
     // MARK: - Enums
     
@@ -18,7 +26,7 @@ struct HeroEntity {
     }
     
     enum ResultsKeys: String, CodingKey {
-        case id, name, thumbnail
+        case id, name, description, thumbnail
     }
     
     enum ThumbnailKeys: String, CodingKey {
@@ -27,19 +35,20 @@ struct HeroEntity {
     
     // MARK: - Structs
     
-    struct HeroInfo: Decodable {
+    struct HeroDetailInfo: Decodable {
         var id: String
         var name: String
+        var description: String
         var image: String
     }
 }
 
 // MARK: - Decodable protocol conformance
 
-extension HeroEntity: Decodable {
+extension HeroDetailEntity: Decodable {
     
     init(from decoder: Decoder) throws {
-        var heroesAux: [HeroInfo] = []
+        var heroesAux: [HeroDetailInfo] = []
         
         let containerRoot = try decoder.container(keyedBy: RootKeys.self)
         let containerData = try containerRoot.nestedContainer(keyedBy: DataKeys.self, forKey: .data)
@@ -52,16 +61,18 @@ extension HeroEntity: Decodable {
                 let thumbnailPath = try thumbnailContainer.decode(String.self, forKey: .path)
                 let thumbnailExtension = try thumbnailContainer.decode(String.self, forKey: .thumbnailExtension)
                 
-                heroesAux.append(HeroInfo(
+                heroesAux.append(HeroDetailInfo(
                     id: String(try resultsContainer.decode(Int.self, forKey: .id)),
                     name: try resultsContainer.decode(String.self, forKey: .name),
-                    image: thumbnailPath + "." + thumbnailExtension)
+                    description: try resultsContainer.decode(String.self, forKey: .description),
+                    image: thumbnailPath + "." + thumbnailExtension
+                    )
                 )
             }
         } catch let error {
             print(error)
         }
-
+        
         heroes = heroesAux
     }
 }

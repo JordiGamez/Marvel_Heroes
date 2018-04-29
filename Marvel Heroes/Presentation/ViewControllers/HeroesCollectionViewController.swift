@@ -19,6 +19,7 @@ class HeroesCollectionViewController: UIViewController {
     let collectionViewCellIdentifier = "HeroesCollectionCell"
     let heroesPerRow = 2
     let minimumRemainingHeroesToAddMore = 20
+    let segueIdentifier = "showHeroDetail"
     
     // MARK: - Variables
     
@@ -85,6 +86,16 @@ class HeroesCollectionViewController: UIViewController {
     /// Loads the IBActions for this view controller
     func loadIBActions() {
         customView.errorButton.addTarget(self, action: #selector(self.tryAgain), for: .touchUpInside)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            let selectedIndexPath = sender as? NSIndexPath
+            let heroDetailDestination = segue.destination as! HeroDetailViewController
+            heroDetailDestination.heroId = heroes[(selectedIndexPath?.row)!].id
+            heroDetailDestination.heroName = heroes[(selectedIndexPath?.row)!].name
+            heroDetailDestination.heroImageUrl = heroes[(selectedIndexPath?.row)!].image
+        }
     }
     
     // MARK: - IBactions
@@ -171,6 +182,10 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
         if indexPath.row == heroes.count - minimumRemainingHeroesToAddMore {
             self.presenter?.loadHeroes()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: segueIdentifier, sender: indexPath)
     }
 }
 

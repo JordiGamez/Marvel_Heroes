@@ -1,29 +1,26 @@
 //
-//  HeroMapper.swift
+//  HeroDetailMapper.swift
 //  Marvel Heroes
 //
-//  Created by Jordi Gamez on 28/4/18.
+//  Created by Jordi Gamez on 29/4/18.
 //  Copyright © 2018 Jordi Gamez. All rights reserved.
 //
 
 import Foundation
 
-class HeroMapper {
+class HeroDetailMapper {
     
-    func transform(_ entity: HeroEntity) -> [Hero] {
+    func transform(_ entity: HeroDetailEntity) -> Hero {
         
-        var heroList: [Hero] = []
+        let hero = Hero()
         
         for item in entity.heroes {
-            let hero = Hero()
-            
             hero.id = item.id
             hero.name = item.name
+            hero.description = item.description
             hero.image = item.image
-            
-            heroList.append(hero)
         }
         
-        return heroList
+        return hero
     }
 }
