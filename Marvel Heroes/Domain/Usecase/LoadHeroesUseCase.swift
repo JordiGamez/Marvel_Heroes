@@ -5,7 +5,7 @@ class LoadHeroesUseCase: BaseUseCase<LoadHeroesResult, LoadHeroesParams> {
     
     // MARK: - Variables
     
-    private var operation: GetHeroesOperationProtocol
+    var operation: GetHeroesOperationProtocol
     
     // MARK: - Initializer
     
@@ -25,8 +25,10 @@ class LoadHeroesUseCase: BaseUseCase<LoadHeroesResult, LoadHeroesParams> {
             let loadHeroesResult = LoadHeroesResult()
             loadHeroesResult.hero = result
             onResult(result: loadHeroesResult)
+        } catch let exception as ConnectivityException {
+            onConnectivityError(exception: exception)
         } catch let exception {
-            // TODO: Handle the exception
+            onGenericError(exception: exception as! Exception)
         }
     }
 }

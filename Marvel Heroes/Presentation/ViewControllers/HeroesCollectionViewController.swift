@@ -17,6 +17,8 @@ class HeroesCollectionViewController: UIViewController {
     // MARK: - Constants
     
     let collectionViewCellIdentifier = "HeroesCollectionCell"
+    let heroesPerRow = 2
+    let minimumRemainingHeroesToAddMore = 20
     
     // MARK: - Variables
     
@@ -131,6 +133,11 @@ extension HeroesCollectionViewController: HeroesCollectionViewProtocol {
     func showError() {
         customView.errorView.isHidden = false
     }
+    
+    /// Hides the error view
+    func hideError() {
+        customView.errorView.isHidden = true
+    }
 }
 
 // MARK: - UICollectionViewDataSource and UICollectionViewDelegate protocol conformance
@@ -151,7 +158,7 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == heroes.count - 10 {
+        if indexPath.row == heroes.count - minimumRemainingHeroesToAddMore {
             self.presenter?.loadHeroes()
         }
     }
@@ -162,7 +169,7 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
 extension HeroesCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let yourWidth = collectionView.bounds.width/2
+        let yourWidth = collectionView.bounds.width/CGFloat(heroesPerRow)
         let yourHeight = yourWidth
         return CGSize(width: yourWidth, height: yourHeight)
     }

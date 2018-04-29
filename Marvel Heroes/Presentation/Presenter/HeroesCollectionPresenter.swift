@@ -62,7 +62,9 @@ extension HeroesCollectionPresenter {
             self.parent = parent
         }
         
+        // Correct result
         override func onResult(result: LoadHeroesResult) {
+            self.parent.view?.hideError()
             self.parent.view?.hideLoading()
             
             if let heroList = result.hero {
@@ -75,6 +77,18 @@ extension HeroesCollectionPresenter {
                 
                 self.parent.numberOfHeroes += heroList.count
             }
+        }
+        
+        // Connectivity error
+        override func onConnectivityError(exception: ConnectivityException) {
+            self.parent.view?.hideLoading()
+            self.parent.view?.showError()
+        }
+        
+        // Error
+        override func onGenericError(exception: Exception) {
+            self.parent.view?.hideLoading()
+            self.parent.view?.showError()
         }
     }
 }

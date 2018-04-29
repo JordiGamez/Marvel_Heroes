@@ -11,4 +11,8 @@ import Foundation
 class Callback<Result> {
     
     func onResult(result: Result) {}
+    
+    func onConnectivityError(exception: ConnectivityException) {}
+    
+    func onGenericError(exception: Exception) {}
 }

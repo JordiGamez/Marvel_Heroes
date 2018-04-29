@@ -24,4 +24,7 @@ protocol HeroesCollectionViewProtocol {
     
     /// Displays an error if something went wrong
     func showError()
+    
+    /// Hides the error view
+    func hideError()
 }

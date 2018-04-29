@@ -55,4 +55,22 @@ class BaseUseCase<T, Params>: UseCase<T, Params> {
             self.callback?.onResult(result: result)
         }
     }
+    
+    /// Called when there is a connectivity exception
+    ///
+    /// - Parameter exception: The connectivity exception
+    func onConnectivityError(exception: ConnectivityException) {
+        DispatchQueue.main.async {
+            self.callback?.onConnectivityError(exception: exception)
+        }
+    }
+    
+    /// Called when there is an exception
+    ///
+    /// - Parameter exception: The exception
+    func onGenericError(exception: Exception) {
+        DispatchQueue.main.async {
+            self.callback?.onGenericError(exception: exception)
+        }
+    }
 }

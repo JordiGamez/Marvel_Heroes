@@ -11,7 +11,6 @@
 		C606F98120946A02006DEDF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C606F97F20946A02006DEDF8 /* Main.storyboard */; };
 		C606F98320946A0C006DEDF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C606F98220946A0C006DEDF8 /* Assets.xcassets */; };
 		C606F98620946A0C006DEDF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C606F98420946A0C006DEDF8 /* LaunchScreen.storyboard */; };
-		C606F99120946A0D006DEDF8 /* Marvel_HeroesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C606F99020946A0D006DEDF8 /* Marvel_HeroesTests.swift */; };
 		C613CC2D20946DD600E80820 /* HeroesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC2C20946DD600E80820 /* HeroesCollectionViewController.swift */; };
 		C613CC2F20946DE400E80820 /* HeroesCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC2E20946DE400E80820 /* HeroesCollectionPresenter.swift */; };
 		C613CC3120946DF100E80820 /* HeroesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC3020946DF100E80820 /* HeroesCollectionView.swift */; };
@@ -41,6 +40,36 @@
 		C613CC7E20950B7500E80820 /* HeroesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC7C20950B7500E80820 /* HeroesCollectionViewCell.swift */; };
 		C613CC7F20950B7500E80820 /* HeroesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C613CC7D20950B7500E80820 /* HeroesCollectionViewCell.xib */; };
 		C6CD2AF32095954B008A0503 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2AF22095954B008A0503 /* NetworkProvider.swift */; };
+		C6CD2AF52095A817008A0503 /* HeroesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC3020946DF100E80820 /* HeroesCollectionView.swift */; };
+		C6CD2AF62095A817008A0503 /* HeroesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC7C20950B7500E80820 /* HeroesCollectionViewCell.swift */; };
+		C6CD2AF72095A817008A0503 /* HeroesCollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC362094719800E80820 /* HeroesCollectionViewProtocol.swift */; };
+		C6CD2AF82095A817008A0503 /* HeroesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC2C20946DD600E80820 /* HeroesCollectionViewController.swift */; };
+		C6CD2AF92095A817008A0503 /* HeroesCollectionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC38209471B500E80820 /* HeroesCollectionPresenterProtocol.swift */; };
+		C6CD2AFA2095A817008A0503 /* HeroesCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC2E20946DE400E80820 /* HeroesCollectionPresenter.swift */; };
+		C6CD2AFB2095A817008A0503 /* Callback.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC5B20947CEC00E80820 /* Callback.swift */; };
+		C6CD2AFC2095A817008A0503 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC5820947C8700E80820 /* UseCase.swift */; };
+		C6CD2AFD2095A817008A0503 /* BaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC5520947B6200E80820 /* BaseUseCase.swift */; };
+		C6CD2AFE2095A817008A0503 /* LoadHeroesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC3C2094760700E80820 /* LoadHeroesUseCase.swift */; };
+		C6CD2AFF2095A817008A0503 /* LoadHeroesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC402094779F00E80820 /* LoadHeroesResult.swift */; };
+		C6CD2B002095A817008A0503 /* LoadHeroesParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC422094784A00E80820 /* LoadHeroesParams.swift */; };
+		C6CD2B012095A817008A0503 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC732094BB2700E80820 /* Hero.swift */; };
+		C6CD2B022095A817008A0503 /* GetHeroesOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC49209478D800E80820 /* GetHeroesOperationProtocol.swift */; };
+		C6CD2B032095A817008A0503 /* GetHeroesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC47209478C600E80820 /* GetHeroesOperation.swift */; };
+		C6CD2B042095A817008A0503 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2AF22095954B008A0503 /* NetworkProvider.swift */; };
+		C6CD2B052095A817008A0503 /* ApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC4F209479DD00E80820 /* ApiClientProtocol.swift */; };
+		C6CD2B062095A817008A0503 /* BaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC5320947A1500E80820 /* BaseClient.swift */; };
+		C6CD2B072095A817008A0503 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC51209479EB00E80820 /* ApiClient.swift */; };
+		C6CD2B082095A817008A0503 /* HeroMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC752094BB7000E80820 /* HeroMapper.swift */; };
+		C6CD2B092095A817008A0503 /* HeroEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC7020948E2300E80820 /* HeroEntity.swift */; };
+		C6CD2B0A2095A817008A0503 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC6D2094890E00E80820 /* DateExtensions.swift */; };
+		C6CD2B0B2095A817008A0503 /* Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC66209486D000E80820 /* Exception.swift */; };
+		C6CD2B0C2095A817008A0503 /* ConnectivityException.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC68209486F600E80820 /* ConnectivityException.swift */; };
+		C6CD2B0D2095A817008A0503 /* UnknownException.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC6A2094871C00E80820 /* UnknownException.swift */; };
+		C6CD2B0E2095A817008A0503 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC5F2094801A00E80820 /* Values.swift */; };
+		C6CD2B0F2095A817008A0503 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC612094812700E80820 /* Settings.swift */; };
+		C6CD2B162095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B152095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift */; };
+		C6CD2B192095AA46008A0503 /* HeroesCollectionViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B182095AA46008A0503 /* HeroesCollectionViewControllerMock.swift */; };
+		C6CD2B252095AFC7008A0503 /* GetHeroesOperationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B242095AFC7008A0503 /* GetHeroesOperationMock.swift */; };
 		DE27D94A5296040F06401CD6 /* Pods_Marvel_Heroes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41E8A8E680374C9E860B911 /* Pods_Marvel_Heroes.framework */; };
 		E3AF8FF01ECF682AFC8D5EFF /* Pods_Marvel_HeroesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F1642FBEC439CC618244CA /* Pods_Marvel_HeroesTests.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +127,9 @@
 		C613CC7C20950B7500E80820 /* HeroesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C613CC7D20950B7500E80820 /* HeroesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HeroesCollectionViewCell.xib; path = ../Views/HeroesCollectionViewCell.xib; sourceTree = "<group>"; };
 		C6CD2AF22095954B008A0503 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		C6CD2B152095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionPresenterUnitTests.swift; sourceTree = "<group>"; };
+		C6CD2B182095AA46008A0503 /* HeroesCollectionViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionViewControllerMock.swift; sourceTree = "<group>"; };
+		C6CD2B242095AFC7008A0503 /* GetHeroesOperationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroesOperationMock.swift; sourceTree = "<group>"; };
 		F41E8A8E680374C9E860B911 /* Pods_Marvel_Heroes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_Heroes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F1642FBEC439CC618244CA /* Pods_Marvel_HeroesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_HeroesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -184,6 +216,7 @@
 		C606F98F20946A0D006DEDF8 /* Marvel HeroesTests */ = {
 			isa = PBXGroup;
 			children = (
+				C6CD2AF42095A7E1008A0503 /* Unit testing */,
 				C606F99020946A0D006DEDF8 /* Marvel_HeroesTests.swift */,
 				C606F99220946A0D006DEDF8 /* Info.plist */,
 			);
@@ -436,6 +469,80 @@
 			path = Provider;
 			sourceTree = "<group>";
 		};
+		C6CD2AF42095A7E1008A0503 /* Unit testing */ = {
+			isa = PBXGroup;
+			children = (
+				C6CD2B102095A82E008A0503 /* Mocks */,
+				C6CD2B112095A833008A0503 /* Tests */,
+			);
+			path = "Unit testing";
+			sourceTree = "<group>";
+		};
+		C6CD2B102095A82E008A0503 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C6CD2B132095A84C008A0503 /* Presentation */,
+				C6CD2B222095AFAF008A0503 /* Data */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C6CD2B112095A833008A0503 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C6CD2B122095A842008A0503 /* Presentation */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		C6CD2B122095A842008A0503 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C6CD2B142095A85C008A0503 /* Presenter */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C6CD2B132095A84C008A0503 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C6CD2B172095AA39008A0503 /* ViewController */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C6CD2B142095A85C008A0503 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C6CD2B152095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C6CD2B172095AA39008A0503 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C6CD2B182095AA46008A0503 /* HeroesCollectionViewControllerMock.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C6CD2B222095AFAF008A0503 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C6CD2B232095AFBA008A0503 /* Operation */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C6CD2B232095AFBA008A0503 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				C6CD2B242095AFC7008A0503 /* GetHeroesOperationMock.swift */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -642,7 +749,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C606F99120946A0D006DEDF8 /* Marvel_HeroesTests.swift in Sources */,
+				C6CD2B162095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift in Sources */,
+				C6CD2AF52095A817008A0503 /* HeroesCollectionView.swift in Sources */,
+				C6CD2AF62095A817008A0503 /* HeroesCollectionViewCell.swift in Sources */,
+				C6CD2AF72095A817008A0503 /* HeroesCollectionViewProtocol.swift in Sources */,
+				C6CD2AF82095A817008A0503 /* HeroesCollectionViewController.swift in Sources */,
+				C6CD2AF92095A817008A0503 /* HeroesCollectionPresenterProtocol.swift in Sources */,
+				C6CD2AFA2095A817008A0503 /* HeroesCollectionPresenter.swift in Sources */,
+				C6CD2AFB2095A817008A0503 /* Callback.swift in Sources */,
+				C6CD2AFC2095A817008A0503 /* UseCase.swift in Sources */,
+				C6CD2AFD2095A817008A0503 /* BaseUseCase.swift in Sources */,
+				C6CD2AFE2095A817008A0503 /* LoadHeroesUseCase.swift in Sources */,
+				C6CD2AFF2095A817008A0503 /* LoadHeroesResult.swift in Sources */,
+				C6CD2B002095A817008A0503 /* LoadHeroesParams.swift in Sources */,
+				C6CD2B012095A817008A0503 /* Hero.swift in Sources */,
+				C6CD2B022095A817008A0503 /* GetHeroesOperationProtocol.swift in Sources */,
+				C6CD2B032095A817008A0503 /* GetHeroesOperation.swift in Sources */,
+				C6CD2B042095A817008A0503 /* NetworkProvider.swift in Sources */,
+				C6CD2B192095AA46008A0503 /* HeroesCollectionViewControllerMock.swift in Sources */,
+				C6CD2B052095A817008A0503 /* ApiClientProtocol.swift in Sources */,
+				C6CD2B062095A817008A0503 /* BaseClient.swift in Sources */,
+				C6CD2B252095AFC7008A0503 /* GetHeroesOperationMock.swift in Sources */,
+				C6CD2B072095A817008A0503 /* ApiClient.swift in Sources */,
+				C6CD2B082095A817008A0503 /* HeroMapper.swift in Sources */,
+				C6CD2B092095A817008A0503 /* HeroEntity.swift in Sources */,
+				C6CD2B0A2095A817008A0503 /* DateExtensions.swift in Sources */,
+				C6CD2B0B2095A817008A0503 /* Exception.swift in Sources */,
+				C6CD2B0C2095A817008A0503 /* ConnectivityException.swift in Sources */,
+				C6CD2B0D2095A817008A0503 /* UnknownException.swift in Sources */,
+				C6CD2B0E2095A817008A0503 /* Values.swift in Sources */,
+				C6CD2B0F2095A817008A0503 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
