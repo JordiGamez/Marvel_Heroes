@@ -13,14 +13,14 @@ class HeroesCollectionPresenterUnitTests: XCTestCase {
     
     private var presenter: HeroesCollectionPresenter?
     private var useCase: LoadHeroesUseCase?
-    private var operation: GetHeroesOperation?
-    private var client = ApiClient()
+    private var operation: GetHeroesOperationMock?
+    private var client = ApiClientMock()
     private var view: HeroesCollectionViewControllerMock?
     
     // MARK: - Set up
     
     override func setUp() {
-        operation = GetHeroesOperation(client: client)
+        operation = GetHeroesOperationMock(client: client)
         useCase = LoadHeroesUseCase(doInBackground: false, operation: operation!)
         presenter = HeroesCollectionPresenter(loadHeroesUseCase: useCase!, networkProvider: NetworkProvider())
         view = HeroesCollectionViewControllerMock()

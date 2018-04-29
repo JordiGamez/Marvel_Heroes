@@ -64,7 +64,7 @@ extension HeroesCollectionViewControllerMock: HeroesCollectionViewProtocol {
         showErrorLoadingMoreIsCalled = true
     }
     
-    /// Hides the error view
+    /// Hides the error view when loading more items
     func hideErrorLoadingMore() {
         hideErrorLoadingMoreIsCalled = true
     }

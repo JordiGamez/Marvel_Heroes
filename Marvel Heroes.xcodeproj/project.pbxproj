@@ -41,6 +41,34 @@
 		C63F61612095F4410076B7BE /* HeroDetailComicViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63F615F2095F4410076B7BE /* HeroDetailComicViewCell.swift */; };
 		C63F61622095F4410076B7BE /* HeroDetailComicViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C63F61602095F4410076B7BE /* HeroDetailComicViewCell.xib */; };
 		C63F616420963A5B0076B7BE /* ComicDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63F616320963A5B0076B7BE /* ComicDetail.swift */; };
+		C63F616520963CE00076B7BE /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B2E2095C01E008A0503 /* HeroDetailView.swift */; };
+		C63F616620963CE00076B7BE /* HeroDetailComicViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63F615F2095F4410076B7BE /* HeroDetailComicViewCell.swift */; };
+		C63F616720963CE00076B7BE /* HeroDetailViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B342095C562008A0503 /* HeroDetailViewProtocol.swift */; };
+		C63F616820963CE00076B7BE /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B322095C467008A0503 /* HeroDetailViewController.swift */; };
+		C63F616920963CE00076B7BE /* HeroDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B382095C5DA008A0503 /* HeroDetailPresenterProtocol.swift */; };
+		C63F616A20963CE00076B7BE /* HeroDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B362095C58F008A0503 /* HeroDetailPresenter.swift */; };
+		C63F616B20963CE00076B7BE /* LoadHeroDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B3E2095C6D1008A0503 /* LoadHeroDetailUseCase.swift */; };
+		C63F616C20963CE00076B7BE /* LoadHeroDetailComicsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B4E2095E257008A0503 /* LoadHeroDetailComicsUseCase.swift */; };
+		C63F616D20963CE00076B7BE /* LoadHeroDetailResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B3A2095C689008A0503 /* LoadHeroDetailResult.swift */; };
+		C63F616E20963CE00076B7BE /* LoadHeroDetailComicsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B4A2095DEEB008A0503 /* LoadHeroDetailComicsResult.swift */; };
+		C63F616F20963CE00076B7BE /* LoadHeroDetailParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B3C2095C6AC008A0503 /* LoadHeroDetailParams.swift */; };
+		C63F617020963CE00076B7BE /* LoadHeroDetailComicsParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B482095DEC6008A0503 /* LoadHeroDetailComicsParams.swift */; };
+		C63F617120963CE00076B7BE /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B4C2095DF36008A0503 /* Comic.swift */; };
+		C63F617220963CE00076B7BE /* ComicDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63F616320963A5B0076B7BE /* ComicDetail.swift */; };
+		C63F617320963CE00076B7BE /* GetHeroDetailOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B402095C70D008A0503 /* GetHeroDetailOperationProtocol.swift */; };
+		C63F617420963CE00076B7BE /* GetHeroDetailComicsOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B522095E2B3008A0503 /* GetHeroDetailComicsOperationProtocol.swift */; };
+		C63F617520963CE00076B7BE /* GetHeroDetailOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B422095C73C008A0503 /* GetHeroDetailOperation.swift */; };
+		C63F617620963CE00076B7BE /* GetHeroDetailComicsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B502095E299008A0503 /* GetHeroDetailComicsOperation.swift */; };
+		C63F617720963CE00076B7BE /* HeroDetailMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B442095D278008A0503 /* HeroDetailMapper.swift */; };
+		C63F617820963CE00076B7BE /* ComicDetailMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B562095E4F2008A0503 /* ComicDetailMapper.swift */; };
+		C63F617920963CE00076B7BE /* HeroDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B462095D35A008A0503 /* HeroDetailEntity.swift */; };
+		C63F617A20963CE00076B7BE /* ComicDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B542095E49E008A0503 /* ComicDetailEntity.swift */; };
+		C63F617C20963DC00076B7BE /* HeroDetailPresenterUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63F617B20963DC00076B7BE /* HeroDetailPresenterUnitTests.swift */; };
+		C63F617E20963E2B0076B7BE /* HeroDetailViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63F617D20963E2B0076B7BE /* HeroDetailViewControllerMock.swift */; };
+		C63F61802096421F0076B7BE /* LoadHeroDetailUseCaseUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63F617F2096421F0076B7BE /* LoadHeroDetailUseCaseUnitTests.swift */; };
+		C63F6182209642930076B7BE /* GetHeroDetailOperationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63F6181209642930076B7BE /* GetHeroDetailOperationMock.swift */; };
+		C63F61862096442C0076B7BE /* LoadHeroesUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63F61852096442C0076B7BE /* LoadHeroesUseCaseMock.swift */; };
+		C63F6188209644EB0076B7BE /* GetHeroDetailComicsOperationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63F6187209644EB0076B7BE /* GetHeroDetailComicsOperationMock.swift */; };
 		C6CD2AF32095954B008A0503 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2AF22095954B008A0503 /* NetworkProvider.swift */; };
 		C6CD2AF52095A817008A0503 /* HeroesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC3020946DF100E80820 /* HeroesCollectionView.swift */; };
 		C6CD2AF62095A817008A0503 /* HeroesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC7C20950B7500E80820 /* HeroesCollectionViewCell.swift */; };
@@ -151,6 +179,12 @@
 		C63F615F2095F4410076B7BE /* HeroDetailComicViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailComicViewCell.swift; sourceTree = "<group>"; };
 		C63F61602095F4410076B7BE /* HeroDetailComicViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailComicViewCell.xib; sourceTree = "<group>"; };
 		C63F616320963A5B0076B7BE /* ComicDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetail.swift; sourceTree = "<group>"; };
+		C63F617B20963DC00076B7BE /* HeroDetailPresenterUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailPresenterUnitTests.swift; sourceTree = "<group>"; };
+		C63F617D20963E2B0076B7BE /* HeroDetailViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewControllerMock.swift; sourceTree = "<group>"; };
+		C63F617F2096421F0076B7BE /* LoadHeroDetailUseCaseUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadHeroDetailUseCaseUnitTests.swift; sourceTree = "<group>"; };
+		C63F6181209642930076B7BE /* GetHeroDetailOperationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroDetailOperationMock.swift; sourceTree = "<group>"; };
+		C63F61852096442C0076B7BE /* LoadHeroesUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadHeroesUseCaseMock.swift; sourceTree = "<group>"; };
+		C63F6187209644EB0076B7BE /* GetHeroDetailComicsOperationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroDetailComicsOperationMock.swift; sourceTree = "<group>"; };
 		C6CD2AF22095954B008A0503 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		C6CD2B152095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionPresenterUnitTests.swift; sourceTree = "<group>"; };
 		C6CD2B182095AA46008A0503 /* HeroesCollectionViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionViewControllerMock.swift; sourceTree = "<group>"; };
@@ -523,6 +557,22 @@
 			path = Mapper;
 			sourceTree = "<group>";
 		};
+		C63F61832096441E0076B7BE /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C63F6184209644230076B7BE /* Usecase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C63F6184209644230076B7BE /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				C63F61852096442C0076B7BE /* LoadHeroesUseCaseMock.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
 		C6CD2AF120959533008A0503 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +594,7 @@
 			isa = PBXGroup;
 			children = (
 				C6CD2B132095A84C008A0503 /* Presentation */,
+				C63F61832096441E0076B7BE /* Domain */,
 				C6CD2B222095AFAF008A0503 /* Data */,
 			);
 			path = Mocks;
@@ -578,6 +629,7 @@
 			isa = PBXGroup;
 			children = (
 				C6CD2B152095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift */,
+				C63F617B20963DC00076B7BE /* HeroDetailPresenterUnitTests.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -586,6 +638,7 @@
 			isa = PBXGroup;
 			children = (
 				C6CD2B182095AA46008A0503 /* HeroesCollectionViewControllerMock.swift */,
+				C63F617D20963E2B0076B7BE /* HeroDetailViewControllerMock.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -603,6 +656,8 @@
 			isa = PBXGroup;
 			children = (
 				C6CD2B242095AFC7008A0503 /* GetHeroesOperationMock.swift */,
+				C63F6181209642930076B7BE /* GetHeroDetailOperationMock.swift */,
+				C63F6187209644EB0076B7BE /* GetHeroDetailComicsOperationMock.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -620,6 +675,7 @@
 			isa = PBXGroup;
 			children = (
 				C6CD2B292095B2BC008A0503 /* LoadHeroesUseCaseUnitTests.swift */,
+				C63F617F2096421F0076B7BE /* LoadHeroDetailUseCaseUnitTests.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -861,6 +917,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C63F616520963CE00076B7BE /* HeroDetailView.swift in Sources */,
+				C63F616620963CE00076B7BE /* HeroDetailComicViewCell.swift in Sources */,
+				C63F616720963CE00076B7BE /* HeroDetailViewProtocol.swift in Sources */,
+				C63F616820963CE00076B7BE /* HeroDetailViewController.swift in Sources */,
+				C63F616920963CE00076B7BE /* HeroDetailPresenterProtocol.swift in Sources */,
+				C63F616A20963CE00076B7BE /* HeroDetailPresenter.swift in Sources */,
+				C63F616B20963CE00076B7BE /* LoadHeroDetailUseCase.swift in Sources */,
+				C63F617C20963DC00076B7BE /* HeroDetailPresenterUnitTests.swift in Sources */,
+				C63F6188209644EB0076B7BE /* GetHeroDetailComicsOperationMock.swift in Sources */,
+				C63F616C20963CE00076B7BE /* LoadHeroDetailComicsUseCase.swift in Sources */,
+				C63F616D20963CE00076B7BE /* LoadHeroDetailResult.swift in Sources */,
+				C63F616E20963CE00076B7BE /* LoadHeroDetailComicsResult.swift in Sources */,
+				C63F616F20963CE00076B7BE /* LoadHeroDetailParams.swift in Sources */,
+				C63F61802096421F0076B7BE /* LoadHeroDetailUseCaseUnitTests.swift in Sources */,
+				C63F617020963CE00076B7BE /* LoadHeroDetailComicsParams.swift in Sources */,
+				C63F617120963CE00076B7BE /* Comic.swift in Sources */,
+				C63F617220963CE00076B7BE /* ComicDetail.swift in Sources */,
+				C63F617320963CE00076B7BE /* GetHeroDetailOperationProtocol.swift in Sources */,
+				C63F617420963CE00076B7BE /* GetHeroDetailComicsOperationProtocol.swift in Sources */,
+				C63F617520963CE00076B7BE /* GetHeroDetailOperation.swift in Sources */,
+				C63F617620963CE00076B7BE /* GetHeroDetailComicsOperation.swift in Sources */,
+				C63F617720963CE00076B7BE /* HeroDetailMapper.swift in Sources */,
+				C63F617820963CE00076B7BE /* ComicDetailMapper.swift in Sources */,
+				C63F617920963CE00076B7BE /* HeroDetailEntity.swift in Sources */,
+				C63F617A20963CE00076B7BE /* ComicDetailEntity.swift in Sources */,
 				C6CD2B162095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift in Sources */,
 				C6CD2AF52095A817008A0503 /* HeroesCollectionView.swift in Sources */,
 				C6CD2AF62095A817008A0503 /* HeroesCollectionViewCell.swift in Sources */,
@@ -869,6 +950,7 @@
 				C6CD2AF82095A817008A0503 /* HeroesCollectionViewController.swift in Sources */,
 				C6CD2AF92095A817008A0503 /* HeroesCollectionPresenterProtocol.swift in Sources */,
 				C6CD2AFA2095A817008A0503 /* HeroesCollectionPresenter.swift in Sources */,
+				C63F617E20963E2B0076B7BE /* HeroDetailViewControllerMock.swift in Sources */,
 				C6CD2AFB2095A817008A0503 /* Callback.swift in Sources */,
 				C6CD2AFC2095A817008A0503 /* UseCase.swift in Sources */,
 				C6CD2AFD2095A817008A0503 /* BaseUseCase.swift in Sources */,
@@ -876,6 +958,7 @@
 				C6CD2AFF2095A817008A0503 /* LoadHeroesResult.swift in Sources */,
 				C6CD2B002095A817008A0503 /* LoadHeroesParams.swift in Sources */,
 				C6CD2B012095A817008A0503 /* Hero.swift in Sources */,
+				C63F6182209642930076B7BE /* GetHeroDetailOperationMock.swift in Sources */,
 				C6CD2B022095A817008A0503 /* GetHeroesOperationProtocol.swift in Sources */,
 				C6CD2B032095A817008A0503 /* GetHeroesOperation.swift in Sources */,
 				C6CD2B2D2095B31E008A0503 /* ApiClientMock.swift in Sources */,
@@ -886,6 +969,7 @@
 				C6CD2B252095AFC7008A0503 /* GetHeroesOperationMock.swift in Sources */,
 				C6CD2B072095A817008A0503 /* ApiClient.swift in Sources */,
 				C6CD2B082095A817008A0503 /* HeroMapper.swift in Sources */,
+				C63F61862096442C0076B7BE /* LoadHeroesUseCaseMock.swift in Sources */,
 				C6CD2B092095A817008A0503 /* HeroEntity.swift in Sources */,
 				C6CD2B0A2095A817008A0503 /* DateExtensions.swift in Sources */,
 				C6CD2B0B2095A817008A0503 /* Exception.swift in Sources */,
