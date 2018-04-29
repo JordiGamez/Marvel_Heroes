@@ -1,6 +1,6 @@
 import Foundation
 
-/// Operation to load the heroes
+/// Operation to load the heroes mock
 class GetHeroesOperationMock {
     
     // MARK: - Variables
@@ -8,6 +8,7 @@ class GetHeroesOperationMock {
     var client: ApiClientProtocol
     var internetConnectionAvailable = true
     var heroes: [Hero] = []
+    var performIsCalled = false
     
     // MARK: - Initializers
     
@@ -25,19 +26,8 @@ extension GetHeroesOperationMock: GetHeroesOperationProtocol {
     /// - Returns: An array with the list of
     /// - Throws: Exception
     func perform(offset: Int = 0) throws -> [Hero] {
+        performIsCalled = true
         if internetConnectionAvailable {
-            var heroes: [Hero] = []
-            
-            let heroHulk = Hero()
-            heroHulk.name = "Hulk"
-            heroHulk.image = "hulk.jpg"
-            heroes.append(heroHulk)
-            
-            let heroSpiderman = Hero()
-            heroSpiderman.name = "Hulk"
-            heroSpiderman.image = "hulk.jpg"
-            heroes.append(heroSpiderman)
-            
             return heroes
         } else {
             throw ConnectivityException()

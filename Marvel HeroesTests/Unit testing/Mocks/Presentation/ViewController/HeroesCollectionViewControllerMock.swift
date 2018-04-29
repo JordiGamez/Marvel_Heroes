@@ -1,5 +1,6 @@
 import Foundation
 
+/// HeroesCollectionViewController mock
 class HeroesCollectionViewControllerMock {
     
     // MARK: - Variables
@@ -12,6 +13,8 @@ class HeroesCollectionViewControllerMock {
     var showErrorIsCalled = false
     var hideErrorIsCalled = false
 }
+
+// MARK: - HeroesCollectionViewProtocol protocol conformance
 
 extension HeroesCollectionViewControllerMock: HeroesCollectionViewProtocol {
     

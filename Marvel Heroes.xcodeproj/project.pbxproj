@@ -70,6 +70,8 @@
 		C6CD2B162095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B152095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift */; };
 		C6CD2B192095AA46008A0503 /* HeroesCollectionViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B182095AA46008A0503 /* HeroesCollectionViewControllerMock.swift */; };
 		C6CD2B252095AFC7008A0503 /* GetHeroesOperationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B242095AFC7008A0503 /* GetHeroesOperationMock.swift */; };
+		C6CD2B2A2095B2BC008A0503 /* LoadHeroesUseCaseUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B292095B2BC008A0503 /* LoadHeroesUseCaseUnitTests.swift */; };
+		C6CD2B2D2095B31E008A0503 /* ApiClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B2C2095B31E008A0503 /* ApiClientMock.swift */; };
 		DE27D94A5296040F06401CD6 /* Pods_Marvel_Heroes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41E8A8E680374C9E860B911 /* Pods_Marvel_Heroes.framework */; };
 		E3AF8FF01ECF682AFC8D5EFF /* Pods_Marvel_HeroesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F1642FBEC439CC618244CA /* Pods_Marvel_HeroesTests.framework */; };
 /* End PBXBuildFile section */
@@ -130,6 +132,8 @@
 		C6CD2B152095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionPresenterUnitTests.swift; sourceTree = "<group>"; };
 		C6CD2B182095AA46008A0503 /* HeroesCollectionViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionViewControllerMock.swift; sourceTree = "<group>"; };
 		C6CD2B242095AFC7008A0503 /* GetHeroesOperationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroesOperationMock.swift; sourceTree = "<group>"; };
+		C6CD2B292095B2BC008A0503 /* LoadHeroesUseCaseUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadHeroesUseCaseUnitTests.swift; sourceTree = "<group>"; };
+		C6CD2B2C2095B31E008A0503 /* ApiClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientMock.swift; sourceTree = "<group>"; };
 		F41E8A8E680374C9E860B911 /* Pods_Marvel_Heroes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_Heroes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F1642FBEC439CC618244CA /* Pods_Marvel_HeroesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_HeroesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -491,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				C6CD2B122095A842008A0503 /* Presentation */,
+				C6CD2B272095B295008A0503 /* Domain */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -530,6 +535,7 @@
 		C6CD2B222095AFAF008A0503 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C6CD2B2B2095B30E008A0503 /* Client */,
 				C6CD2B232095AFBA008A0503 /* Operation */,
 			);
 			path = Data;
@@ -541,6 +547,31 @@
 				C6CD2B242095AFC7008A0503 /* GetHeroesOperationMock.swift */,
 			);
 			path = Operation;
+			sourceTree = "<group>";
+		};
+		C6CD2B272095B295008A0503 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C6CD2B282095B2A0008A0503 /* Usecase */,
+			);
+			name = Domain;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		C6CD2B282095B2A0008A0503 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				C6CD2B292095B2BC008A0503 /* LoadHeroesUseCaseUnitTests.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		C6CD2B2B2095B30E008A0503 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				C6CD2B2C2095B31E008A0503 /* ApiClientMock.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -752,6 +783,7 @@
 				C6CD2B162095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift in Sources */,
 				C6CD2AF52095A817008A0503 /* HeroesCollectionView.swift in Sources */,
 				C6CD2AF62095A817008A0503 /* HeroesCollectionViewCell.swift in Sources */,
+				C6CD2B2A2095B2BC008A0503 /* LoadHeroesUseCaseUnitTests.swift in Sources */,
 				C6CD2AF72095A817008A0503 /* HeroesCollectionViewProtocol.swift in Sources */,
 				C6CD2AF82095A817008A0503 /* HeroesCollectionViewController.swift in Sources */,
 				C6CD2AF92095A817008A0503 /* HeroesCollectionPresenterProtocol.swift in Sources */,
@@ -765,6 +797,7 @@
 				C6CD2B012095A817008A0503 /* Hero.swift in Sources */,
 				C6CD2B022095A817008A0503 /* GetHeroesOperationProtocol.swift in Sources */,
 				C6CD2B032095A817008A0503 /* GetHeroesOperation.swift in Sources */,
+				C6CD2B2D2095B31E008A0503 /* ApiClientMock.swift in Sources */,
 				C6CD2B042095A817008A0503 /* NetworkProvider.swift in Sources */,
 				C6CD2B192095AA46008A0503 /* HeroesCollectionViewControllerMock.swift in Sources */,
 				C6CD2B052095A817008A0503 /* ApiClientProtocol.swift in Sources */,
