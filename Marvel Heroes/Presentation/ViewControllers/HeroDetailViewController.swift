@@ -133,6 +133,16 @@ extension HeroDetailViewController: HeroDetailViewProtocol {
     func hideComicsCollection() {
         customView.comicCollectionView.isHidden = true
     }
+    
+    /// Displays a loader
+    func showLoading() {
+        customView.loadingView.isHidden = false
+    }
+    
+    /// Hides the loader
+    func hideLoading() {
+        customView.loadingView.isHidden = true
+    }
 }
 
 // MARK: - UICollectionViewDataSource and UICollectionViewDelegate protocol conformance

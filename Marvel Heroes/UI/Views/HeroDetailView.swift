@@ -32,6 +32,17 @@ class HeroDetailView: UIView {
             comicCollectionView.isHidden = true
         }
     }
+    @IBOutlet weak var loadingView: UIView! {
+        didSet {
+            loadingView.isHidden = true
+        }
+    }
+    @IBOutlet weak var loadingLabel: UILabel! {
+        didSet {
+            loadingLabel.text = "Searching comics..."
+            loadingLabel.font = loadingLabel.font.withSize(12.0)
+        }
+    }
     
     // MARK: - Constants
     

@@ -24,4 +24,10 @@ protocol HeroDetailViewProtocol {
     
     /// Hide the comics header
     func hideComicsCollection()
+    
+    /// Displays a loader
+    func showLoading()
+    
+    /// Hides the loader
+    func hideLoading()
 }

@@ -60,6 +60,8 @@ extension HeroDetailPresenter: HeroDetailPresenterProtocol {
             self.view?.showComicsHeader()
             self.view?.showComicsCollection()
         }
+        
+        self.view?.hideLoading()
     }
 }
 
@@ -78,6 +80,7 @@ extension HeroDetailPresenter {
         // Correct result
         override func onResult(result: LoadHeroDetailResult) {
             self.parent.view?.showHero(hero: result.hero!)
+            self.parent.view?.showLoading()
             self.parent.loadHeroComics(heroId: (result.hero?.id)!)
         }
         
