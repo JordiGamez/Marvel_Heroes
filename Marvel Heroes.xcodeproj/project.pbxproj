@@ -98,7 +98,6 @@
 		C606F98520946A0C006DEDF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C606F98720946A0C006DEDF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C606F98C20946A0D006DEDF8 /* Marvel HeroesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Marvel HeroesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C606F99020946A0D006DEDF8 /* Marvel_HeroesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_HeroesTests.swift; sourceTree = "<group>"; };
 		C606F99220946A0D006DEDF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C613CC2C20946DD600E80820 /* HeroesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionViewController.swift; sourceTree = "<group>"; };
 		C613CC2E20946DE400E80820 /* HeroesCollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionPresenter.swift; sourceTree = "<group>"; };
@@ -221,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				C6CD2AF42095A7E1008A0503 /* Unit testing */,
-				C606F99020946A0D006DEDF8 /* Marvel_HeroesTests.swift */,
 				C606F99220946A0D006DEDF8 /* Info.plist */,
 			);
 			path = "Marvel HeroesTests";

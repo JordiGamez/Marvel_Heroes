@@ -32,7 +32,7 @@ class LoadHeroesUseCaseUnitTests: XCTestCase {
     
     // MARK: - Tests
     
-    // MARK:
+    // MARK: execute() onResult()
     
     func testGivenEnabledInternetConnect_WhenExecuteUseCase_ThenOnResultIsCalled() {
         operation = GetHeroesOperationMock(client: client)
@@ -47,6 +47,8 @@ class LoadHeroesUseCaseUnitTests: XCTestCase {
         XCTAssertTrue(performIsCalled)
         XCTAssertTrue(onResult)
     }
+    
+    // MARK: execute() onConnectivityError()
     
     func testGivenDisabledInternetConnect_WhenExecuteUseCase_ThenOnConnectivityErrorIsCalled() {
         operation = GetHeroesOperationMock(client: client)
