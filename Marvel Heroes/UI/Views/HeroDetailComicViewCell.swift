@@ -1,7 +1,7 @@
 import UIKit
 import Kingfisher
 
-/// Hero comic view cell
+/// Hero detail comic view cell
 class HeroDetailComicViewCell: UICollectionViewCell {
 
     // MARK: - IBOutlets

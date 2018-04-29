@@ -17,6 +17,7 @@ class HeroDetailViewController: UIViewController {
     // MARK: - Constants
     
     let collectionViewCellIdentifier = "ComicsCollectionCell"
+    let viewTitle = "Hero details"
     
     // MARK: - Variables
     
@@ -73,7 +74,7 @@ class HeroDetailViewController: UIViewController {
     
     /// Update the view with the information from the collection view
     func updateView() {
-        navigationItem.title = "Hero details"
+        navigationItem.title = viewTitle
         customView.nameLabel.text = heroName
         customView.imageUIImageView.kf.setImage(with: URL(string: heroImageUrl!)!)
     }

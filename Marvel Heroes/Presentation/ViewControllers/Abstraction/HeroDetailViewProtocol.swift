@@ -19,10 +19,10 @@ protocol HeroDetailViewProtocol {
     /// Hide the comics header
     func hideComicsHeader()
     
-    /// Display the comics header
+    /// Display the comics collection
     func showComicsCollection()
     
-    /// Hide the comics header
+    /// Hide the comics collection
     func hideComicsCollection()
     
     /// Displays a loader

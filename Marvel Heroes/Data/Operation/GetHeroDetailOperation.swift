@@ -1,6 +1,6 @@
 import Foundation
 
-/// Operation to load the heroes
+/// Operation to load the hero detail
 class GetHeroDetailOperation {
     
     // MARK: - Variables
@@ -18,9 +18,10 @@ class GetHeroDetailOperation {
 
 extension GetHeroDetailOperation: GetHeroDetailOperationProtocol {
     
-    /// Loads the heroes
+    /// Loads the hero information
     ///
-    /// - Returns: The id of the hero
+    /// - Parameter heroId: The id of the hero
+    /// - Returns: A list with the hero information
     /// - Throws: Exception
     func perform(heroId: String) throws -> Hero {
         do {

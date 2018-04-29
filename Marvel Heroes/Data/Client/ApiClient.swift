@@ -15,9 +15,6 @@ class ApiClient: BaseClient {
 
     var domain = ""
     var url = Values.Server.Api.Url.rawValue
-    var numberOfTries = Settings.Network.Retry.rawValue
-    var delay = Settings.Network.Delay.rawValue
-    var attempt = 0
 }
 
 // MARK: - ApiClientProtocol protocol conformance
@@ -51,7 +48,7 @@ extension ApiClient: ApiClientProtocol {
         
         // Request
         do {
-            let result = try doRequest(url: url + endpoint + "?" + limit + "&" + offset + "&ts=" + timestamp + "&" + apikey + "&" + hash, method: .get, encoding: URLEncoding.default, headers: nil, attempt: attempt, maxNumberOfTries: numberOfTries, delayTime: delay)
+            let result = try doRequest(url: url + endpoint + "?" + limit + "&" + offset + "&ts=" + timestamp + "&" + apikey + "&" + hash, method: .get, encoding: URLEncoding.default, headers: nil)
             
             // Decode
             let heroEntityList = try? jsonDecoder.decode(HeroEntity.self, from: result.response)
@@ -83,7 +80,7 @@ extension ApiClient: ApiClientProtocol {
         
         // Request
         do {
-            let result = try doRequest(url: url + endpoint + heroId + "?&ts=" + timestamp + "&" + apikey + "&" + hash, method: .get, encoding: URLEncoding.default, headers: nil, attempt: attempt, maxNumberOfTries: numberOfTries, delayTime: delay)
+            let result = try doRequest(url: url + endpoint + heroId + "?&ts=" + timestamp + "&" + apikey + "&" + hash, method: .get, encoding: URLEncoding.default, headers: nil)
             
             // Decode
             let heroDetailEntity = try? jsonDecoder.decode(HeroDetailEntity.self, from: result.response)
@@ -116,7 +113,7 @@ extension ApiClient: ApiClientProtocol {
         
         // Request
         do {
-            let result = try doRequest(url: url + endpoint + "?&ts=" + timestamp + "&" + apikey + "&" + hash, method: .get, encoding: URLEncoding.default, headers: nil, attempt: attempt, maxNumberOfTries: numberOfTries, delayTime: delay)
+            let result = try doRequest(url: url + endpoint + "?&ts=" + timestamp + "&" + apikey + "&" + hash, method: .get, encoding: URLEncoding.default, headers: nil)
             
             // Decode
             let heroDetailEntity = try? jsonDecoder.decode(ComicDetailEntity.self, from: result.response)

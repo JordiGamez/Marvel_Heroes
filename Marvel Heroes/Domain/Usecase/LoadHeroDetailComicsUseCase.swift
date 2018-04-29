@@ -1,6 +1,6 @@
 import Foundation
 
-/// Use case to load heroes
+/// Use case to load heroes comics
 class LoadHeroDetailComicsUseCase: BaseUseCase<LoadHeroDetailComicsResult, LoadHeroDetailComicsParams> {
     
     // MARK: - Variables

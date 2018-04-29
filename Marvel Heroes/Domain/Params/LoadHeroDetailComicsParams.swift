@@ -1,6 +1,6 @@
 import Foundation
 
-/// Params class for LoadHeroesUseCase
+/// Params class for LoadHeroDetailComicsUseCase
 struct LoadHeroDetailComicsParams {
     
     // MARK: - Variables

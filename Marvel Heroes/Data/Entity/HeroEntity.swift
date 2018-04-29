@@ -38,30 +38,28 @@ struct HeroEntity {
 
 extension HeroEntity: Decodable {
     
+    // Decodes the JSON
     init(from decoder: Decoder) throws {
-        var heroesAux: [HeroInfo] = []
+        var heroesList: [HeroInfo] = []
         
         let containerRoot = try decoder.container(keyedBy: RootKeys.self)
         let containerData = try containerRoot.nestedContainer(keyedBy: DataKeys.self, forKey: .data)
-        do {
-            var resultsUnkeyedContainer = try containerData.nestedUnkeyedContainer(forKey: .results)
-            while !resultsUnkeyedContainer.isAtEnd {
-                let resultsContainer = try resultsUnkeyedContainer.nestedContainer(keyedBy: ResultsKeys.self)
-                
-                let thumbnailContainer = try resultsContainer.nestedContainer(keyedBy: ThumbnailKeys.self, forKey: .thumbnail)
-                let thumbnailPath = try thumbnailContainer.decode(String.self, forKey: .path)
-                let thumbnailExtension = try thumbnailContainer.decode(String.self, forKey: .thumbnailExtension)
-                
-                heroesAux.append(HeroInfo(
-                    id: String(try resultsContainer.decode(Int.self, forKey: .id)),
-                    name: try resultsContainer.decode(String.self, forKey: .name),
-                    image: thumbnailPath + "." + thumbnailExtension)
-                )
-            }
-        } catch let error {
-            print(error)
+
+        var resultsUnkeyedContainer = try containerData.nestedUnkeyedContainer(forKey: .results)
+        while !resultsUnkeyedContainer.isAtEnd {
+            let resultsContainer = try resultsUnkeyedContainer.nestedContainer(keyedBy: ResultsKeys.self)
+            
+            let thumbnailContainer = try resultsContainer.nestedContainer(keyedBy: ThumbnailKeys.self, forKey: .thumbnail)
+            let thumbnailPath = try thumbnailContainer.decode(String.self, forKey: .path)
+            let thumbnailExtension = try thumbnailContainer.decode(String.self, forKey: .thumbnailExtension)
+            
+            heroesList.append(HeroInfo(
+                id: String(try resultsContainer.decode(Int.self, forKey: .id)),
+                name: try resultsContainer.decode(String.self, forKey: .name),
+                image: thumbnailPath + "." + thumbnailExtension)
+            )
         }
 
-        heroes = heroesAux
+        heroes = heroesList
     }
 }

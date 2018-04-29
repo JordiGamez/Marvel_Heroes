@@ -1,5 +1,5 @@
 //
-//  Comic.swift
+//  ComicDetail.swift
 //  Marvel Heroes
 //
 //  Created by Jordi Gamez on 29/4/18.
@@ -8,11 +8,10 @@
 
 import Foundation
 
-class Comic {
+class ComicDetail {
     
     // MARK: - Variables
     
-    var id: String?
+    var resourceURI: String?
     var name: String?
-    var image: String?
 }

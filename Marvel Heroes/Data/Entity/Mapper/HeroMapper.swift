@@ -10,6 +10,10 @@ import Foundation
 
 class HeroMapper {
     
+    /// Maps the HeroEntity to Hero
+    ///
+    /// - Parameter entity: HeroEntity
+    /// - Returns: Hero array
     func transform(_ entity: HeroEntity) -> [Hero] {
         
         var heroList: [Hero] = []

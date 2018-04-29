@@ -29,7 +29,6 @@
 		C613CC5920947C8700E80820 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC5820947C8700E80820 /* UseCase.swift */; };
 		C613CC5C20947CEC00E80820 /* Callback.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC5B20947CEC00E80820 /* Callback.swift */; };
 		C613CC602094801A00E80820 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC5F2094801A00E80820 /* Values.swift */; };
-		C613CC622094812700E80820 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC612094812700E80820 /* Settings.swift */; };
 		C613CC67209486D000E80820 /* Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC66209486D000E80820 /* Exception.swift */; };
 		C613CC69209486F600E80820 /* ConnectivityException.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC68209486F600E80820 /* ConnectivityException.swift */; };
 		C613CC6B2094871C00E80820 /* UnknownException.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC6A2094871C00E80820 /* UnknownException.swift */; };
@@ -41,6 +40,7 @@
 		C613CC7F20950B7500E80820 /* HeroesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C613CC7D20950B7500E80820 /* HeroesCollectionViewCell.xib */; };
 		C63F61612095F4410076B7BE /* HeroDetailComicViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63F615F2095F4410076B7BE /* HeroDetailComicViewCell.swift */; };
 		C63F61622095F4410076B7BE /* HeroDetailComicViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C63F61602095F4410076B7BE /* HeroDetailComicViewCell.xib */; };
+		C63F616420963A5B0076B7BE /* ComicDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63F616320963A5B0076B7BE /* ComicDetail.swift */; };
 		C6CD2AF32095954B008A0503 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2AF22095954B008A0503 /* NetworkProvider.swift */; };
 		C6CD2AF52095A817008A0503 /* HeroesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC3020946DF100E80820 /* HeroesCollectionView.swift */; };
 		C6CD2AF62095A817008A0503 /* HeroesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC7C20950B7500E80820 /* HeroesCollectionViewCell.swift */; };
@@ -68,7 +68,6 @@
 		C6CD2B0C2095A817008A0503 /* ConnectivityException.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC68209486F600E80820 /* ConnectivityException.swift */; };
 		C6CD2B0D2095A817008A0503 /* UnknownException.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC6A2094871C00E80820 /* UnknownException.swift */; };
 		C6CD2B0E2095A817008A0503 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC5F2094801A00E80820 /* Values.swift */; };
-		C6CD2B0F2095A817008A0503 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613CC612094812700E80820 /* Settings.swift */; };
 		C6CD2B162095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B152095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift */; };
 		C6CD2B192095AA46008A0503 /* HeroesCollectionViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B182095AA46008A0503 /* HeroesCollectionViewControllerMock.swift */; };
 		C6CD2B252095AFC7008A0503 /* GetHeroesOperationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B242095AFC7008A0503 /* GetHeroesOperationMock.swift */; };
@@ -140,7 +139,6 @@
 		C613CC5820947C8700E80820 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		C613CC5B20947CEC00E80820 /* Callback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Callback.swift; sourceTree = "<group>"; };
 		C613CC5F2094801A00E80820 /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
-		C613CC612094812700E80820 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		C613CC66209486D000E80820 /* Exception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exception.swift; sourceTree = "<group>"; };
 		C613CC68209486F600E80820 /* ConnectivityException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityException.swift; sourceTree = "<group>"; };
 		C613CC6A2094871C00E80820 /* UnknownException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownException.swift; sourceTree = "<group>"; };
@@ -152,6 +150,7 @@
 		C613CC7D20950B7500E80820 /* HeroesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HeroesCollectionViewCell.xib; path = ../Views/HeroesCollectionViewCell.xib; sourceTree = "<group>"; };
 		C63F615F2095F4410076B7BE /* HeroDetailComicViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailComicViewCell.swift; sourceTree = "<group>"; };
 		C63F61602095F4410076B7BE /* HeroDetailComicViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailComicViewCell.xib; sourceTree = "<group>"; };
+		C63F616320963A5B0076B7BE /* ComicDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetail.swift; sourceTree = "<group>"; };
 		C6CD2AF22095954B008A0503 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		C6CD2B152095A887008A0503 /* HeroesCollectionPresenterUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionPresenterUnitTests.swift; sourceTree = "<group>"; };
 		C6CD2B182095AA46008A0503 /* HeroesCollectionViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionViewControllerMock.swift; sourceTree = "<group>"; };
@@ -252,7 +251,6 @@
 				C613CC44209478A300E80820 /* Data */,
 				C613CC63209486A300E80820 /* Helpers */,
 				C613CC5D20947FE900E80820 /* Values */,
-				C613CC5E20947FEF00E80820 /* Settings */,
 				C606F97B20946A02006DEDF8 /* AppDelegate.swift */,
 				C606F97F20946A02006DEDF8 /* Main.storyboard */,
 				C606F98420946A0C006DEDF8 /* LaunchScreen.storyboard */,
@@ -467,14 +465,6 @@
 			path = Values;
 			sourceTree = "<group>";
 		};
-		C613CC5E20947FEF00E80820 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				C613CC612094812700E80820 /* Settings.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		C613CC63209486A300E80820 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +508,7 @@
 			children = (
 				C613CC732094BB2700E80820 /* Hero.swift */,
 				C6CD2B4C2095DF36008A0503 /* Comic.swift */,
+				C63F616320963A5B0076B7BE /* ComicDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -828,6 +819,7 @@
 				C613CC50209479DD00E80820 /* ApiClientProtocol.swift in Sources */,
 				C613CC372094719800E80820 /* HeroesCollectionViewProtocol.swift in Sources */,
 				C613CC2F20946DE400E80820 /* HeroesCollectionPresenter.swift in Sources */,
+				C63F616420963A5B0076B7BE /* ComicDetail.swift in Sources */,
 				C613CC3D2094760700E80820 /* LoadHeroesUseCase.swift in Sources */,
 				C613CC48209478C600E80820 /* GetHeroesOperation.swift in Sources */,
 				C6CD2B372095C58F008A0503 /* HeroDetailPresenter.swift in Sources */,
@@ -859,7 +851,6 @@
 				C613CC6B2094871C00E80820 /* UnknownException.swift in Sources */,
 				C6CD2B3D2095C6AC008A0503 /* LoadHeroDetailParams.swift in Sources */,
 				C613CC762094BB7000E80820 /* HeroMapper.swift in Sources */,
-				C613CC622094812700E80820 /* Settings.swift in Sources */,
 				C6CD2B4D2095DF36008A0503 /* Comic.swift in Sources */,
 				C6CD2B392095C5DA008A0503 /* HeroDetailPresenterProtocol.swift in Sources */,
 				C6CD2B3B2095C689008A0503 /* LoadHeroDetailResult.swift in Sources */,
@@ -901,7 +892,6 @@
 				C6CD2B0C2095A817008A0503 /* ConnectivityException.swift in Sources */,
 				C6CD2B0D2095A817008A0503 /* UnknownException.swift in Sources */,
 				C6CD2B0E2095A817008A0503 /* Values.swift in Sources */,
-				C6CD2B0F2095A817008A0503 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

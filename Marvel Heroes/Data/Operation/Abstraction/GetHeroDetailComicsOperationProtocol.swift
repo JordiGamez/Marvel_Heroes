@@ -5,7 +5,8 @@ protocol GetHeroDetailComicsOperationProtocol {
     
     /// Loads the heroes comics
     ///
-    /// - Returns:
+    /// - Parameter heroId: The id of the hero
+    /// - Returns: The array of the comics
     /// - Throws: Exception
     func perform(heroId: String) throws -> [Comic]
 }

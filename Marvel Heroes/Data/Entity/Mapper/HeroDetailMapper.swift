@@ -10,6 +10,10 @@ import Foundation
 
 class HeroDetailMapper {
     
+    /// Maps the HeroDetailEntity to Hero
+    ///
+    /// - Parameter entity: HeroDetailEntity
+    /// - Returns: Hero array
     func transform(_ entity: HeroDetailEntity) -> Hero {
         
         let hero = Hero()
@@ -23,10 +27,10 @@ class HeroDetailMapper {
             hero.description = item.description
             hero.image = item.image
             
-            for comicEntity in item.comic {
+            for comicItem in item.comic {
                 let comic = ComicDetail()
-                comic.name = comicEntity.name
-                comic.resourceURI = comicEntity.resourceURI
+                comic.name = comicItem.name
+                comic.resourceURI = comicItem.resourceURI
                 
                 comicList.append(comic)
             }

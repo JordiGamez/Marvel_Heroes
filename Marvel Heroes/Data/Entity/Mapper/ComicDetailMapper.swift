@@ -10,6 +10,10 @@ import Foundation
 
 class ComicDetailMapper {
     
+    /// Maps the ComicDetailEntity to Comic
+    ///
+    /// - Parameter entity: ComicDetailEntity
+    /// - Returns: Comic array
     func transform(_ entity: ComicDetailEntity) -> [Comic] {
         
         var comicList: [Comic] = []

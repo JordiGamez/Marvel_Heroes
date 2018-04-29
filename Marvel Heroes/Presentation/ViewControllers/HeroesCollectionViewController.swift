@@ -20,6 +20,7 @@ class HeroesCollectionViewController: UIViewController {
     let heroesPerRow = 2
     let minimumRemainingHeroesToAddMore = 20
     let segueIdentifier = "showHeroDetail"
+    let viewTitle = "Marvel Heroes"
     
     // MARK: - Variables
     
@@ -76,7 +77,7 @@ class HeroesCollectionViewController: UIViewController {
     
     /// Update the view with the information from the collection view
     func updateView() {
-        navigationItem.title = "Marvel Heroes"
+        navigationItem.title = viewTitle
     }
     
     /// Sets the presenter
@@ -164,7 +165,7 @@ extension HeroesCollectionViewController: HeroesCollectionViewProtocol {
         customView.errorLoadingMoreHeroesView.isHidden = false
     }
     
-    /// Hides the error view
+    /// Hides the error view when loading more items
     func hideErrorLoadingMore() {
         customView.errorLoadingMoreHeroesView.isHidden = true
     }
@@ -187,12 +188,14 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
         return cell
     }
     
+    // Loads more heroes when there are minimumRemainingHeroesToAddMore remaining heroes
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == heroes.count - minimumRemainingHeroesToAddMore {
             self.presenter?.loadHeroes()
         }
     }
     
+    // Perform a segue to the Detail hero view when one is selected
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: segueIdentifier, sender: indexPath)
     }

@@ -1,6 +1,6 @@
 import Foundation
 
-/// Use case to load heroes
+/// Use case to load all hero details
 class LoadHeroDetailUseCase: BaseUseCase<LoadHeroDetailResult, LoadHeroDetailParams> {
     
     // MARK: - Variables
@@ -18,7 +18,7 @@ class LoadHeroDetailUseCase: BaseUseCase<LoadHeroDetailResult, LoadHeroDetailPar
     
     /// Executes the use case
     ///
-    /// - Parameter params: Param class to execute LoadHeroesUseCase
+    /// - Parameter params: Param class to execute LoadHeroDetailUseCase
     override func execute(params: LoadHeroDetailParams) {
         do {
             let result = try operation.perform(heroId: params.id)

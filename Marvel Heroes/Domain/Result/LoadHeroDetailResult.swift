@@ -1,6 +1,6 @@
 import Foundation
 
-/// Result class for LoadHeroesUseCase
+/// Result class for LoadHeroDetailUseCase
 class LoadHeroDetailResult {
     
     // MARK: - Variables

@@ -1,12 +1,12 @@
 import Foundation
 
-/// Abstraction for loading the heroes operation
+/// Abstraction for loading the heroes detail operation
 protocol GetHeroDetailOperationProtocol {
     
-    /// Loads the heroes
+    /// Loads the hero information
     ///
-    /// - Parameter offset: Skip the specified number of resources in the result set
-    /// - Returns: A list with the heroes
+    /// - Parameter heroId: The id of the hero
+    /// - Returns: A list with the hero information
     /// - Throws: Exception
     func perform(heroId: String) throws -> Hero
 }

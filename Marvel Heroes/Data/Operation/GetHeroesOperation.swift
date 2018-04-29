@@ -20,7 +20,8 @@ extension GetHeroesOperation: GetHeroesOperationProtocol {
 
     /// Loads the heroes
     ///
-    /// - Returns: An array with the list of
+    /// - Parameter offset: Skip the specified number of resources in the result set
+    /// - Returns: A list with the heroes
     /// - Throws: Exception
     func perform(offset: Int = 0) throws -> [Hero] {
         do {
