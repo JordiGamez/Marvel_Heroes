@@ -54,6 +54,12 @@ class HeroesCollectionView: UIView {
             errorLoadingMoreHeroesLabel.textColor = .white
         }
     }
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+            let textFieldInsideUISearchBar = searchBar.value(forKey: "searchField") as? UITextField
+            textFieldInsideUISearchBar?.font = textFieldInsideUISearchBar?.font?.withSize(14.0)
+        }
+    }
     
     // MARK: - Constants
     

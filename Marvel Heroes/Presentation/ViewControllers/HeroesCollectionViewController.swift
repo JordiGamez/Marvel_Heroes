@@ -52,6 +52,7 @@ class HeroesCollectionViewController: UIViewController {
         // Set the delegate and data source
         customView.heroCollectionView.dataSource = self
         customView.heroCollectionView.delegate = self
+        customView.searchBar.delegate = self
         
         /// Update the view with content
         updateView()
@@ -221,5 +222,14 @@ extension HeroesCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+// MARK: - UISearchBarDelegate protocol conformance
+
+extension HeroesCollectionViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
     }
 }
