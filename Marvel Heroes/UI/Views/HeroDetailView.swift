@@ -6,24 +6,6 @@ class HeroDetailView: UIView {
     // MARK: - IBOutlets
     
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var navigationBar: UINavigationBar! {
-        didSet {
-            navigationBar.isTranslucent = false
-            navigationBar.backgroundColor = .black
-            navigationBar.tintColor = .white
-        }
-    }
-    @IBOutlet weak var navigationTitle: UINavigationItem! {
-        didSet {
-            navigationTitle.title = "Hero details"
-            navigationTitle.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
-        }
-    }
-    @IBOutlet weak var navigationBackButton: UIBarButtonItem! {
-        didSet {
-            navigationBackButton.tintColor = .white
-        }
-    }
     @IBOutlet weak var nameLabel: UILabel! {
         didSet {
             nameLabel.font = UIFont.boldSystemFont(ofSize: 20.0)

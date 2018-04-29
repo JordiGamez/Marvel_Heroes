@@ -73,6 +73,7 @@ class HeroDetailViewController: UIViewController {
     
     /// Update the view with the information from the collection view
     func updateView() {
+        navigationItem.title = "Hero details"
         customView.nameLabel.text = heroName
         customView.imageUIImageView.kf.setImage(with: URL(string: heroImageUrl!)!)
     }

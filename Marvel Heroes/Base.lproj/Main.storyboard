@@ -20,7 +20,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HsO-Eo-tGy"/>
+                    <navigationItem key="navigationItem" id="HsO-Eo-tGy">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Ora-ih-nns"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="customView" destination="8bC-Xf-vdC" id="Try-Ld-SEl"/>
                         <segue destination="Q8R-6n-FMO" kind="show" identifier="showHeroDetail" id="lXn-FE-XLP"/>
