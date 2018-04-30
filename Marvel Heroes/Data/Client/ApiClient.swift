@@ -59,6 +59,41 @@ extension ApiClient: ApiClientProtocol {
         }
     }
     
+    /// Search heroes by name from the Api
+    ///
+    /// - Parameter name: The name of the hero
+    /// - Returns: A HeroEntity object
+    /// - Throws: Exception
+    func getHeroesBy(name: String) throws -> HeroEntity? {
+        
+        // Endpoint
+        let endpoint = Values.Server.Endpoints.Characters.rawValue
+        
+        // Name
+        let name = "nameStartsWith=\(name)"
+        
+        // Timestamp
+        let timestamp = String(Date().toMillis())
+        
+        // Api key
+        let apikey = "apikey=\(Values.Server.Api.PublicKey.rawValue)"
+        
+        // Hash value
+        let hash = "hash=\((timestamp + Values.Server.Api.PrivateKey.rawValue + Values.Server.Api.PublicKey.rawValue).md5())"
+        
+        // Request
+        do {
+            let result = try doRequest(url: url + endpoint + "?" + "&" + name + "&ts=" + timestamp + "&" + apikey + "&" + hash, method: .get, encoding: URLEncoding.default, headers: nil)
+            
+            // Decode
+            let heroEntityList = try? jsonDecoder.decode(HeroEntity.self, from: result.response)
+            
+            return heroEntityList
+        } catch let exception as ConnectivityException {
+            throw exception
+        }
+    }
+    
     /// Gets all the available information of a hero
     ///
     /// - Parameter heroId: The hero id

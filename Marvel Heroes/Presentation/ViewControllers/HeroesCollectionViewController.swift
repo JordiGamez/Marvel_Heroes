@@ -21,6 +21,7 @@ class HeroesCollectionViewController: UIViewController {
     let minimumRemainingHeroesToAddMore = 20
     let segueIdentifier = "showHeroDetail"
     let viewTitle = "Marvel Heroes"
+    let apiClient = ApiClient()
     
     // MARK: - Variables
     
@@ -31,7 +32,7 @@ class HeroesCollectionViewController: UIViewController {
     // MARK: - Initializers
     
     init(_ coder: NSCoder? = nil) {
-        heroesCollectionPresenter = HeroesCollectionPresenter(loadHeroesUseCase: LoadHeroesUseCase(doInBackground: true, operation: GetHeroesOperation(client: ApiClient())), networkProvider: NetworkProvider())
+        heroesCollectionPresenter = HeroesCollectionPresenter(loadHeroesUseCase: LoadHeroesUseCase(doInBackground: true, operation: GetHeroesOperation(client: apiClient)), searchHeroUseCase: SearchHeroUseCase(doInBackground: true, operation: SearchHeroesOperation(client: apiClient)), networkProvider: NetworkProvider())
         
         if let coder = coder {
             super.init(coder: coder)!
@@ -170,6 +171,11 @@ extension HeroesCollectionViewController: HeroesCollectionViewProtocol {
     func hideErrorLoadingMore() {
         customView.errorLoadingMoreHeroesView.isHidden = true
     }
+    
+    /// Dismiss the keyboard
+    func hideKeyboard() {
+        customView.searchBar.resignFirstResponder()
+    }
 }
 
 // MARK: - UICollectionViewDataSource and UICollectionViewDelegate protocol conformance
@@ -229,7 +235,11 @@ extension HeroesCollectionViewController: UICollectionViewDelegateFlowLayout {
 
 extension HeroesCollectionViewController: UISearchBarDelegate {
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        presenter?.searchButtonClicked()
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+        presenter?.searchHeroName(name: searchText)
     }
 }

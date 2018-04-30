@@ -86,12 +86,12 @@ extension HeroDetailPresenter {
         
         // Connectivity error
         override func onConnectivityError(exception: ConnectivityException) {
-            print("ConnectivityException")
+            print("\(self.parent.tag): onConnectivityError")
         }
         
         // Error
         override func onGenericError(exception: Exception) {
-            print("Exception")
+            print("\(self.parent.tag): onGenericError")
         }
     }
 }
@@ -115,12 +115,12 @@ extension HeroDetailPresenter {
         
         // Connectivity error
         override func onConnectivityError(exception: ConnectivityException) {
-            print("ConnectivityException")
+            print("\(self.parent.tag): onConnectivityError")
         }
         
         // Error
         override func onGenericError(exception: Exception) {
-            print("Exception")
+            print("\(self.parent.tag): onGenericError")
         }
     }
 }

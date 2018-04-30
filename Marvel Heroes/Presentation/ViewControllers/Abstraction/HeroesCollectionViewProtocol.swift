@@ -33,4 +33,7 @@ protocol HeroesCollectionViewProtocol {
     
     /// Hides the error view when loading more items
     func hideErrorLoadingMore()
+    
+    /// Dismiss the keyboard
+    func hideKeyboard()
 }

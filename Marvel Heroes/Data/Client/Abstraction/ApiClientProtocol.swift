@@ -17,6 +17,13 @@ protocol ApiClientProtocol {
     /// - Throws: Exception
     func getHeroes(offset: Int) throws -> HeroEntity?
     
+    /// Search heroes by name from the Api
+    ///
+    /// - Parameter name: The name of the hero
+    /// - Returns: A HeroEntity object
+    /// - Throws: Exception
+    func getHeroesBy(name: String) throws -> HeroEntity?
+    
     /// Gets all the available information of a hero
     ///
     /// - Parameter heroId: The hero id

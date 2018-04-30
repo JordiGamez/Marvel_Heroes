@@ -122,6 +122,11 @@
 		C6CD2B532095E2B3008A0503 /* GetHeroDetailComicsOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B522095E2B3008A0503 /* GetHeroDetailComicsOperationProtocol.swift */; };
 		C6CD2B552095E49E008A0503 /* ComicDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B542095E49E008A0503 /* ComicDetailEntity.swift */; };
 		C6CD2B572095E4F2008A0503 /* ComicDetailMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD2B562095E4F2008A0503 /* ComicDetailMapper.swift */; };
+		C6E89F2C2096E9B800881317 /* SearchHeroUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F2B2096E9B800881317 /* SearchHeroUseCase.swift */; };
+		C6E89F2E2096E9E400881317 /* SearchHeroResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F2D2096E9E400881317 /* SearchHeroResult.swift */; };
+		C6E89F302096EA0600881317 /* SearchHeroParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F2F2096EA0600881317 /* SearchHeroParams.swift */; };
+		C6E89F322096EA6500881317 /* SearchHeroesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F312096EA6500881317 /* SearchHeroesOperation.swift */; };
+		C6E89F342096EAAB00881317 /* SearchHeroesOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F332096EAAB00881317 /* SearchHeroesOperationProtocol.swift */; };
 		DE27D94A5296040F06401CD6 /* Pods_Marvel_Heroes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41E8A8E680374C9E860B911 /* Pods_Marvel_Heroes.framework */; };
 		E3AF8FF01ECF682AFC8D5EFF /* Pods_Marvel_HeroesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F1642FBEC439CC618244CA /* Pods_Marvel_HeroesTests.framework */; };
 /* End PBXBuildFile section */
@@ -212,6 +217,11 @@
 		C6CD2B522095E2B3008A0503 /* GetHeroDetailComicsOperationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroDetailComicsOperationProtocol.swift; sourceTree = "<group>"; };
 		C6CD2B542095E49E008A0503 /* ComicDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailEntity.swift; sourceTree = "<group>"; };
 		C6CD2B562095E4F2008A0503 /* ComicDetailMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailMapper.swift; sourceTree = "<group>"; };
+		C6E89F2B2096E9B800881317 /* SearchHeroUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeroUseCase.swift; sourceTree = "<group>"; };
+		C6E89F2D2096E9E400881317 /* SearchHeroResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeroResult.swift; sourceTree = "<group>"; };
+		C6E89F2F2096EA0600881317 /* SearchHeroParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeroParams.swift; sourceTree = "<group>"; };
+		C6E89F312096EA6500881317 /* SearchHeroesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeroesOperation.swift; sourceTree = "<group>"; };
+		C6E89F332096EAAB00881317 /* SearchHeroesOperationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeroesOperationProtocol.swift; sourceTree = "<group>"; };
 		F41E8A8E680374C9E860B911 /* Pods_Marvel_Heroes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_Heroes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F1642FBEC439CC618244CA /* Pods_Marvel_HeroesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_HeroesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -398,6 +408,7 @@
 			children = (
 				C613CC5520947B6200E80820 /* BaseUseCase.swift */,
 				C613CC3C2094760700E80820 /* LoadHeroesUseCase.swift */,
+				C6E89F2B2096E9B800881317 /* SearchHeroUseCase.swift */,
 				C6CD2B3E2095C6D1008A0503 /* LoadHeroDetailUseCase.swift */,
 				C6CD2B4E2095E257008A0503 /* LoadHeroDetailComicsUseCase.swift */,
 			);
@@ -408,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				C613CC422094784A00E80820 /* LoadHeroesParams.swift */,
+				C6E89F2F2096EA0600881317 /* SearchHeroParams.swift */,
 				C6CD2B3C2095C6AC008A0503 /* LoadHeroDetailParams.swift */,
 				C6CD2B482095DEC6008A0503 /* LoadHeroDetailComicsParams.swift */,
 			);
@@ -418,6 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				C613CC402094779F00E80820 /* LoadHeroesResult.swift */,
+				C6E89F2D2096E9E400881317 /* SearchHeroResult.swift */,
 				C6CD2B3A2095C689008A0503 /* LoadHeroDetailResult.swift */,
 				C6CD2B4A2095DEEB008A0503 /* LoadHeroDetailComicsResult.swift */,
 			);
@@ -440,6 +453,7 @@
 			children = (
 				C613CC46209478B200E80820 /* Abstraction */,
 				C613CC47209478C600E80820 /* GetHeroesOperation.swift */,
+				C6E89F312096EA6500881317 /* SearchHeroesOperation.swift */,
 				C6CD2B422095C73C008A0503 /* GetHeroDetailOperation.swift */,
 				C6CD2B502095E299008A0503 /* GetHeroDetailComicsOperation.swift */,
 			);
@@ -450,6 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				C613CC49209478D800E80820 /* GetHeroesOperationProtocol.swift */,
+				C6E89F332096EAAB00881317 /* SearchHeroesOperationProtocol.swift */,
 				C6CD2B402095C70D008A0503 /* GetHeroDetailOperationProtocol.swift */,
 				C6CD2B522095E2B3008A0503 /* GetHeroDetailComicsOperationProtocol.swift */,
 			);
@@ -861,8 +876,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E89F2E2096E9E400881317 /* SearchHeroResult.swift in Sources */,
 				C6CD2B2F2095C01E008A0503 /* HeroDetailView.swift in Sources */,
 				C6CD2B552095E49E008A0503 /* ComicDetailEntity.swift in Sources */,
+				C6E89F322096EA6500881317 /* SearchHeroesOperation.swift in Sources */,
 				C613CC6E2094890E00E80820 /* DateExtensions.swift in Sources */,
 				C613CC39209471B500E80820 /* HeroesCollectionPresenterProtocol.swift in Sources */,
 				C613CC67209486D000E80820 /* Exception.swift in Sources */,
@@ -878,6 +895,7 @@
 				C63F616420963A5B0076B7BE /* ComicDetail.swift in Sources */,
 				C613CC3D2094760700E80820 /* LoadHeroesUseCase.swift in Sources */,
 				C613CC48209478C600E80820 /* GetHeroesOperation.swift in Sources */,
+				C6E89F342096EAAB00881317 /* SearchHeroesOperationProtocol.swift in Sources */,
 				C6CD2B372095C58F008A0503 /* HeroDetailPresenter.swift in Sources */,
 				C6CD2B512095E299008A0503 /* GetHeroDetailComicsOperation.swift in Sources */,
 				C6CD2B492095DEC6008A0503 /* LoadHeroDetailComicsParams.swift in Sources */,
@@ -894,12 +912,14 @@
 				C613CC52209479EB00E80820 /* ApiClient.swift in Sources */,
 				C6CD2B532095E2B3008A0503 /* GetHeroDetailComicsOperationProtocol.swift in Sources */,
 				C613CC5420947A1500E80820 /* BaseClient.swift in Sources */,
+				C6E89F2C2096E9B800881317 /* SearchHeroUseCase.swift in Sources */,
 				C6CD2B332095C467008A0503 /* HeroDetailViewController.swift in Sources */,
 				C613CC2D20946DD600E80820 /* HeroesCollectionViewController.swift in Sources */,
 				C6CD2B412095C70D008A0503 /* GetHeroDetailOperationProtocol.swift in Sources */,
 				C6CD2AF32095954B008A0503 /* NetworkProvider.swift in Sources */,
 				C613CC3120946DF100E80820 /* HeroesCollectionView.swift in Sources */,
 				C613CC412094779F00E80820 /* LoadHeroesResult.swift in Sources */,
+				C6E89F302096EA0600881317 /* SearchHeroParams.swift in Sources */,
 				C6CD2B4B2095DEEB008A0503 /* LoadHeroDetailComicsResult.swift in Sources */,
 				C6CD2B432095C73C008A0503 /* GetHeroDetailOperation.swift in Sources */,
 				C6CD2B3F2095C6D1008A0503 /* LoadHeroDetailUseCase.swift in Sources */,

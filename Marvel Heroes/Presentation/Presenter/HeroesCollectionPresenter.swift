@@ -7,6 +7,7 @@ class HeroesCollectionPresenter {
     
     let tag = String(describing: HeroesCollectionPresenter.self)
     let loadHeroesUseCase: LoadHeroesUseCase?
+    let searchHeroUseCase: SearchHeroUseCase?
     
     // MARK: - Variables
     
@@ -16,8 +17,9 @@ class HeroesCollectionPresenter {
     
     // MARK: - Initializers
     
-    init(loadHeroesUseCase: LoadHeroesUseCase, networkProvider: NetworkProvider) {
+    init(loadHeroesUseCase: LoadHeroesUseCase, searchHeroUseCase: SearchHeroUseCase, networkProvider: NetworkProvider) {
         self.loadHeroesUseCase = loadHeroesUseCase
+        self.searchHeroUseCase = searchHeroUseCase
         self.networkProvider = networkProvider
     }
 }
@@ -47,6 +49,24 @@ extension HeroesCollectionPresenter: HeroesCollectionPresenterProtocol {
         }
         
         loadHeroesUseCase?.execute(callback: LoadHeroesCallback(parent: self), params: LoadHeroesParams(offset: numberOfHeroes))
+    }
+    
+    /// Detect when the search button is clicked
+    func searchButtonClicked() {
+        self.view?.hideKeyboard()
+    }
+    
+    /// Search hero by name
+    ///
+    /// - Parameter name: The hero name
+    func searchHeroName(name: String) {
+        if name == "" {
+            self.view?.hideKeyboard()
+            numberOfHeroes = 0
+            loadHeroes()
+        } else {
+            searchHeroUseCase?.execute(callback: SearchHeroCallback(parent: self), params: SearchHeroParams(name: name))
+        }
     }
 }
 
@@ -98,6 +118,38 @@ extension HeroesCollectionPresenter {
             } else {
                 self.parent.view?.showErrorLoadingMore()
             }
+        }
+    }
+}
+
+// MARK: - Callback for SearchHeroUseCase
+
+extension HeroesCollectionPresenter {
+    
+    class SearchHeroCallback: Callback<SearchHeroResult> {
+        
+        var parent: HeroesCollectionPresenter
+        
+        init(parent: HeroesCollectionPresenter) {
+            self.parent = parent
+        }
+        
+        // Correct result
+        override func onResult(result: SearchHeroResult) {
+            if let heroList = result.hero {
+                self.parent.view?.showHeroes(list: heroList)
+                self.parent.view?.showHeroCollectionList()
+            }
+        }
+        
+        // Connectivity error
+        override func onConnectivityError(exception: ConnectivityException) {
+            print("\(self.parent.tag): onConnectivityError")
+        }
+        
+        // Error
+        override func onGenericError(exception: Exception) {
+            print("\(self.parent.tag): onGenericError")
         }
     }
 }
