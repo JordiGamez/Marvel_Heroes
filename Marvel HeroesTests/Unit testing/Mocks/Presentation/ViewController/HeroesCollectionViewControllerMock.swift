@@ -14,6 +14,7 @@ class HeroesCollectionViewControllerMock {
     var hideErrorIsCalled = false
     var showErrorLoadingMoreIsCalled = false
     var hideErrorLoadingMoreIsCalled = false
+    var hideKeyboardIsCalled = false
 }
 
 // MARK: - HeroesCollectionViewProtocol protocol conformance
@@ -67,5 +68,10 @@ extension HeroesCollectionViewControllerMock: HeroesCollectionViewProtocol {
     /// Hides the error view when loading more items
     func hideErrorLoadingMore() {
         hideErrorLoadingMoreIsCalled = true
+    }
+    
+    /// Dismiss the keyboard
+    func hideKeyboard() {
+        hideKeyboardIsCalled = true
     }
 }

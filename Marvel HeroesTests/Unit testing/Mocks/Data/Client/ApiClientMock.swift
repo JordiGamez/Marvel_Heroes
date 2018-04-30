@@ -16,6 +16,15 @@ extension ApiClientMock: ApiClientProtocol {
         return nil
     }
     
+    /// Search heroes by name from the Api
+    ///
+    /// - Parameter name: The name of the hero
+    /// - Returns: A HeroEntity object
+    /// - Throws: Exception
+    func getHeroesBy(name: String) throws -> HeroEntity? {
+        return nil
+    }
+    
     /// Gets all the available information of a hero
     ///
     /// - Parameter heroId: The hero id

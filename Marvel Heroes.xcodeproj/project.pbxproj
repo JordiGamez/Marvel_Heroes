@@ -127,6 +127,13 @@
 		C6E89F302096EA0600881317 /* SearchHeroParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F2F2096EA0600881317 /* SearchHeroParams.swift */; };
 		C6E89F322096EA6500881317 /* SearchHeroesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F312096EA6500881317 /* SearchHeroesOperation.swift */; };
 		C6E89F342096EAAB00881317 /* SearchHeroesOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F332096EAAB00881317 /* SearchHeroesOperationProtocol.swift */; };
+		C6E89F352096EFC700881317 /* SearchHeroUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F2B2096E9B800881317 /* SearchHeroUseCase.swift */; };
+		C6E89F362096EFC700881317 /* SearchHeroResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F2D2096E9E400881317 /* SearchHeroResult.swift */; };
+		C6E89F372096EFC700881317 /* SearchHeroParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F2F2096EA0600881317 /* SearchHeroParams.swift */; };
+		C6E89F382096EFC700881317 /* SearchHeroesOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F332096EAAB00881317 /* SearchHeroesOperationProtocol.swift */; };
+		C6E89F392096EFC700881317 /* SearchHeroesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F312096EA6500881317 /* SearchHeroesOperation.swift */; };
+		C6E89F3B2096F05200881317 /* SearchHeroesOperationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F3A2096F05200881317 /* SearchHeroesOperationMock.swift */; };
+		C6E89F3D2096F24700881317 /* SearchHeroUseCaseUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E89F3C2096F24700881317 /* SearchHeroUseCaseUnitTests.swift */; };
 		DE27D94A5296040F06401CD6 /* Pods_Marvel_Heroes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41E8A8E680374C9E860B911 /* Pods_Marvel_Heroes.framework */; };
 		E3AF8FF01ECF682AFC8D5EFF /* Pods_Marvel_HeroesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F1642FBEC439CC618244CA /* Pods_Marvel_HeroesTests.framework */; };
 /* End PBXBuildFile section */
@@ -222,6 +229,8 @@
 		C6E89F2F2096EA0600881317 /* SearchHeroParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeroParams.swift; sourceTree = "<group>"; };
 		C6E89F312096EA6500881317 /* SearchHeroesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeroesOperation.swift; sourceTree = "<group>"; };
 		C6E89F332096EAAB00881317 /* SearchHeroesOperationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeroesOperationProtocol.swift; sourceTree = "<group>"; };
+		C6E89F3A2096F05200881317 /* SearchHeroesOperationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeroesOperationMock.swift; sourceTree = "<group>"; };
+		C6E89F3C2096F24700881317 /* SearchHeroUseCaseUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeroUseCaseUnitTests.swift; sourceTree = "<group>"; };
 		F41E8A8E680374C9E860B911 /* Pods_Marvel_Heroes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_Heroes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F1642FBEC439CC618244CA /* Pods_Marvel_HeroesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_HeroesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -671,6 +680,7 @@
 			isa = PBXGroup;
 			children = (
 				C6CD2B242095AFC7008A0503 /* GetHeroesOperationMock.swift */,
+				C6E89F3A2096F05200881317 /* SearchHeroesOperationMock.swift */,
 				C63F6181209642930076B7BE /* GetHeroDetailOperationMock.swift */,
 				C63F6187209644EB0076B7BE /* GetHeroDetailComicsOperationMock.swift */,
 			);
@@ -690,6 +700,7 @@
 			isa = PBXGroup;
 			children = (
 				C6CD2B292095B2BC008A0503 /* LoadHeroesUseCaseUnitTests.swift */,
+				C6E89F3C2096F24700881317 /* SearchHeroUseCaseUnitTests.swift */,
 				C63F617F2096421F0076B7BE /* LoadHeroDetailUseCaseUnitTests.swift */,
 			);
 			path = Usecase;
@@ -937,6 +948,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E89F352096EFC700881317 /* SearchHeroUseCase.swift in Sources */,
+				C6E89F362096EFC700881317 /* SearchHeroResult.swift in Sources */,
+				C6E89F372096EFC700881317 /* SearchHeroParams.swift in Sources */,
+				C6E89F382096EFC700881317 /* SearchHeroesOperationProtocol.swift in Sources */,
+				C6E89F392096EFC700881317 /* SearchHeroesOperation.swift in Sources */,
 				C63F616520963CE00076B7BE /* HeroDetailView.swift in Sources */,
 				C63F616620963CE00076B7BE /* HeroDetailComicViewCell.swift in Sources */,
 				C63F616720963CE00076B7BE /* HeroDetailViewProtocol.swift in Sources */,
@@ -987,8 +1003,10 @@
 				C6CD2B052095A817008A0503 /* ApiClientProtocol.swift in Sources */,
 				C6CD2B062095A817008A0503 /* BaseClient.swift in Sources */,
 				C6CD2B252095AFC7008A0503 /* GetHeroesOperationMock.swift in Sources */,
+				C6E89F3B2096F05200881317 /* SearchHeroesOperationMock.swift in Sources */,
 				C6CD2B072095A817008A0503 /* ApiClient.swift in Sources */,
 				C6CD2B082095A817008A0503 /* HeroMapper.swift in Sources */,
+				C6E89F3D2096F24700881317 /* SearchHeroUseCaseUnitTests.swift in Sources */,
 				C63F61862096442C0076B7BE /* LoadHeroesUseCaseMock.swift in Sources */,
 				C6CD2B092095A817008A0503 /* HeroEntity.swift in Sources */,
 				C6CD2B0A2095A817008A0503 /* DateExtensions.swift in Sources */,
